@@ -21,6 +21,12 @@ class ViewController: UIViewController {
         // 다크모드 미적용.
         overrideUserInterfaceStyle = .light
 
+        // navigationBar back button image change
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+        // navigationBar backItem title change
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: nil, action: nil)
+
         
 //        let safeArea = view.safeAreaLayoutGuide
 //        btnEmailLogin.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true

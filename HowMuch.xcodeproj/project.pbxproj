@@ -19,6 +19,8 @@
 		575626F92717E87900EF6428 /* HowMuchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */; };
 		57E74A43271D745F000566D4 /* emailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A42271D745F000566D4 /* emailLoginViewController.swift */; };
 		57E74A46271D7838000566D4 /* checkBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A45271D7838000566D4 /* checkBox.swift */; };
+		57E74A48271D9806000566D4 /* underlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A47271D9806000566D4 /* underlineTextField.swift */; };
+		57E74A4B271DBAF1000566D4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 57E74A4A271DBAF1000566D4 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 		575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMuchUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		57E74A42271D745F000566D4 /* emailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailLoginViewController.swift; sourceTree = "<group>"; };
 		57E74A45271D7838000566D4 /* checkBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkBox.swift; sourceTree = "<group>"; };
+		57E74A47271D9806000566D4 /* underlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = underlineTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E74A4B271DBAF1000566D4 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +109,7 @@
 		575626D12717E87400EF6428 /* HowMuch */ = {
 			isa = PBXGroup;
 			children = (
-				57E74A44271D7829000566D4 /* extensionClass */,
+				57E74A44271D7829000566D4 /* extension */,
 				575626D22717E87400EF6428 /* AppDelegate.swift */,
 				575626D42717E87400EF6428 /* SceneDelegate.swift */,
 				575626D62717E87400EF6428 /* ViewController.swift */,
@@ -136,12 +140,13 @@
 			path = HowMuchUITests;
 			sourceTree = "<group>";
 		};
-		57E74A44271D7829000566D4 /* extensionClass */ = {
+		57E74A44271D7829000566D4 /* extension */ = {
 			isa = PBXGroup;
 			children = (
 				57E74A45271D7838000566D4 /* checkBox.swift */,
+				57E74A47271D9806000566D4 /* underlineTextField.swift */,
 			);
-			path = extensionClass;
+			path = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +165,9 @@
 			dependencies = (
 			);
 			name = HowMuch;
+			packageProductDependencies = (
+				57E74A4A271DBAF1000566D4 /* Alamofire */,
+			);
 			productName = HowMuch;
 			productReference = 575626CF2717E87400EF6428 /* HowMuch.app */;
 			productType = "com.apple.product-type.application";
@@ -232,6 +240,9 @@
 				Base,
 			);
 			mainGroup = 575626C62717E87400EF6428;
+			packageReferences = (
+				57E74A49271DBAF1000566D4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 575626D02717E87400EF6428 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -277,6 +288,7 @@
 			files = (
 				575626D72717E87400EF6428 /* ViewController.swift in Sources */,
 				575626D32717E87400EF6428 /* AppDelegate.swift in Sources */,
+				57E74A48271D9806000566D4 /* underlineTextField.swift in Sources */,
 				57E74A43271D745F000566D4 /* emailLoginViewController.swift in Sources */,
 				575626D52717E87400EF6428 /* SceneDelegate.swift in Sources */,
 				57E74A46271D7838000566D4 /* checkBox.swift in Sources */,
@@ -644,6 +656,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		57E74A49271DBAF1000566D4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		57E74A4A271DBAF1000566D4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 57E74A49271DBAF1000566D4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		575626DB2717E87400EF6428 /* HowMuch.xcdatamodeld */ = {
