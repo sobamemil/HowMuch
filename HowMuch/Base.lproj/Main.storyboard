@@ -120,6 +120,31 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="ijk-HB-eiF">
+            <objects>
+                <viewController id="kEz-gS-6hh" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3f0-VO-At3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="app main view" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ns1-te-c9d">
+                                <rect key="frame" x="115" y="430" width="185" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Ca-1r-oTb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="D2R-kK-R6w"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cuu-rc-DCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-607.24637681159425" y="984.375"/>
+        </scene>
         <!--Email Login View Controller-->
         <scene sceneID="8HC-nW-rck">
             <objects>
@@ -253,6 +278,7 @@
                     <connections>
                         <outlet property="tfEmail" destination="65f-BY-zpI" id="5Xx-iC-HOI"/>
                         <outlet property="tfPwd" destination="lli-dR-XMf" id="Jfy-6K-QCB"/>
+                        <segue destination="kEz-gS-6hh" kind="show" identifier="showMain" id="WY9-7O-BCO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccB-ne-Rxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		575626D32717E87400EF6428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626D22717E87400EF6428 /* AppDelegate.swift */; };
 		575626D52717E87400EF6428 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626D42717E87400EF6428 /* SceneDelegate.swift */; };
-		575626D72717E87400EF6428 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626D62717E87400EF6428 /* ViewController.swift */; };
+		575626D72717E87400EF6428 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626D62717E87400EF6428 /* FirstViewController.swift */; };
 		575626DA2717E87400EF6428 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 575626D82717E87400EF6428 /* Main.storyboard */; };
 		575626DD2717E87400EF6428 /* HowMuch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 575626DB2717E87400EF6428 /* HowMuch.xcdatamodeld */; };
 		575626DF2717E87800EF6428 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 575626DE2717E87800EF6428 /* Assets.xcassets */; };
@@ -17,10 +17,11 @@
 		575626ED2717E87800EF6428 /* HowMuchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626EC2717E87800EF6428 /* HowMuchTests.swift */; };
 		575626F72717E87900EF6428 /* HowMuchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F62717E87900EF6428 /* HowMuchUITests.swift */; };
 		575626F92717E87900EF6428 /* HowMuchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */; };
-		57E74A43271D745F000566D4 /* emailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A42271D745F000566D4 /* emailLoginViewController.swift */; };
+		57E74A43271D745F000566D4 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A42271D745F000566D4 /* EmailLoginViewController.swift */; };
 		57E74A46271D7838000566D4 /* checkBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A45271D7838000566D4 /* checkBox.swift */; };
 		57E74A48271D9806000566D4 /* underlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A47271D9806000566D4 /* underlineTextField.swift */; };
 		57E74A4B271DBAF1000566D4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 57E74A4A271DBAF1000566D4 /* Alamofire */; };
+		57E74A4D271DC5F4000566D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A4C271DC5F4000566D4 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,7 @@
 		575626CF2717E87400EF6428 /* HowMuch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowMuch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		575626D22717E87400EF6428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		575626D42717E87400EF6428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		575626D62717E87400EF6428 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		575626D62717E87400EF6428 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		575626D92717E87400EF6428 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		575626DC2717E87400EF6428 /* HowMuch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HowMuch.xcdatamodel; sourceTree = "<group>"; };
 		575626DE2717E87800EF6428 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,9 +56,10 @@
 		575626F22717E87800EF6428 /* HowMuchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowMuchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575626F62717E87900EF6428 /* HowMuchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMuchUITests.swift; sourceTree = "<group>"; };
 		575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMuchUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		57E74A42271D745F000566D4 /* emailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailLoginViewController.swift; sourceTree = "<group>"; };
+		57E74A42271D745F000566D4 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		57E74A45271D7838000566D4 /* checkBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkBox.swift; sourceTree = "<group>"; };
 		57E74A47271D9806000566D4 /* underlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = underlineTextField.swift; sourceTree = "<group>"; };
+		57E74A4C271DC5F4000566D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +114,9 @@
 				57E74A44271D7829000566D4 /* extension */,
 				575626D22717E87400EF6428 /* AppDelegate.swift */,
 				575626D42717E87400EF6428 /* SceneDelegate.swift */,
-				575626D62717E87400EF6428 /* ViewController.swift */,
-				57E74A42271D745F000566D4 /* emailLoginViewController.swift */,
+				575626D62717E87400EF6428 /* FirstViewController.swift */,
+				57E74A42271D745F000566D4 /* EmailLoginViewController.swift */,
+				57E74A4C271DC5F4000566D4 /* MainViewController.swift */,
 				575626D82717E87400EF6428 /* Main.storyboard */,
 				575626DE2717E87800EF6428 /* Assets.xcassets */,
 				575626E02717E87800EF6428 /* LaunchScreen.storyboard */,
@@ -286,13 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				575626D72717E87400EF6428 /* ViewController.swift in Sources */,
+				575626D72717E87400EF6428 /* FirstViewController.swift in Sources */,
 				575626D32717E87400EF6428 /* AppDelegate.swift in Sources */,
 				57E74A48271D9806000566D4 /* underlineTextField.swift in Sources */,
-				57E74A43271D745F000566D4 /* emailLoginViewController.swift in Sources */,
+				57E74A43271D745F000566D4 /* EmailLoginViewController.swift in Sources */,
 				575626D52717E87400EF6428 /* SceneDelegate.swift in Sources */,
 				57E74A46271D7838000566D4 /* checkBox.swift in Sources */,
 				575626DD2717E87400EF6428 /* HowMuch.xcdatamodeld in Sources */,
+				57E74A4D271DC5F4000566D4 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
