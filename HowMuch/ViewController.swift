@@ -9,7 +9,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // 첫 화면(로그인 화면) 로그인 버튼 (이메일, 카카오, 애플 로그인)
     @IBOutlet weak var btnEmailLogin: UIButton!
+    @IBOutlet weak var btnKakaoLogin: UIButton!
+    @IBOutlet weak var btnAppleLogin: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,12 @@ class ViewController: UIViewController {
 //
 //        btnEmailLogin.translatesAutoresizingMaskIntoConstraints = false
 //
+        
+        
     }
-
-
+    
+    @IBAction func emailLoginClicked(_ sender: Any) {
+        
+    }
+    
 }
