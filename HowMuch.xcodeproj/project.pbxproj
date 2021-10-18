@@ -17,6 +17,8 @@
 		575626ED2717E87800EF6428 /* HowMuchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626EC2717E87800EF6428 /* HowMuchTests.swift */; };
 		575626F72717E87900EF6428 /* HowMuchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F62717E87900EF6428 /* HowMuchUITests.swift */; };
 		575626F92717E87900EF6428 /* HowMuchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */; };
+		57E74A43271D745F000566D4 /* emailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A42271D745F000566D4 /* emailLoginViewController.swift */; };
+		57E74A46271D7838000566D4 /* checkBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A45271D7838000566D4 /* checkBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		575626F22717E87800EF6428 /* HowMuchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowMuchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575626F62717E87900EF6428 /* HowMuchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMuchUITests.swift; sourceTree = "<group>"; };
 		575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMuchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		57E74A42271D745F000566D4 /* emailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailLoginViewController.swift; sourceTree = "<group>"; };
+		57E74A45271D7838000566D4 /* checkBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,11 @@
 		575626D12717E87400EF6428 /* HowMuch */ = {
 			isa = PBXGroup;
 			children = (
+				57E74A44271D7829000566D4 /* extensionClass */,
 				575626D22717E87400EF6428 /* AppDelegate.swift */,
 				575626D42717E87400EF6428 /* SceneDelegate.swift */,
 				575626D62717E87400EF6428 /* ViewController.swift */,
+				57E74A42271D745F000566D4 /* emailLoginViewController.swift */,
 				575626D82717E87400EF6428 /* Main.storyboard */,
 				575626DE2717E87800EF6428 /* Assets.xcassets */,
 				575626E02717E87800EF6428 /* LaunchScreen.storyboard */,
@@ -128,6 +134,14 @@
 				575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */,
 			);
 			path = HowMuchUITests;
+			sourceTree = "<group>";
+		};
+		57E74A44271D7829000566D4 /* extensionClass */ = {
+			isa = PBXGroup;
+			children = (
+				57E74A45271D7838000566D4 /* checkBox.swift */,
+			);
+			path = extensionClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +277,9 @@
 			files = (
 				575626D72717E87400EF6428 /* ViewController.swift in Sources */,
 				575626D32717E87400EF6428 /* AppDelegate.swift in Sources */,
+				57E74A43271D745F000566D4 /* emailLoginViewController.swift in Sources */,
 				575626D52717E87400EF6428 /* SceneDelegate.swift in Sources */,
+				57E74A46271D7838000566D4 /* checkBox.swift in Sources */,
 				575626DD2717E87400EF6428 /* HowMuch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

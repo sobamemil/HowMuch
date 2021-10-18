@@ -16,8 +16,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         // Do any additional setup after loading the view.
+
+        // 다크모드 미적용.
+        overrideUserInterfaceStyle = .light
+
         
 //        let safeArea = view.safeAreaLayoutGuide
 //        btnEmailLogin.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
@@ -30,8 +33,8 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func emailLoginClicked(_ sender: Any) {
-        
+    @IBAction func emailLoginClicked(_ sender: UIButton) {
+        performSegue(withIdentifier: "segueEmailLogin", sender: sender)
     }
     
 }
