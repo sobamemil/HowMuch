@@ -13,11 +13,21 @@ class emailLoginViewController : UIViewController {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPwd: UITextField!
     
+    // 다음 누르면 입력창 넘어가기, 완료 누르면 키보드 내려가기
+    @objc func didEndOnExit(_ sender: UITextField) {
+        if tfEmail.isFirstResponder {
+            tfPwd.becomeFirstResponder()
+        }
+    }
     
     override func viewDidLoad() {
         // 다크모드 미적용.
         overrideUserInterfaceStyle = .light
         
+        // 키보드 내리기
+        tfEmail.addTarget(self, action: #selector(didEndOnExit), for: UIControl.Event.editingDidEndOnExit)
+        tfPwd.addTarget(self, action: #selector(didEndOnExit), for: UIControl.Event.editingDidEndOnExit)
+            
         // textfield에 underline을 생성하기 위한 코드
         tfEmail.setUnderLine()
         tfPwd.setUnderLine()
