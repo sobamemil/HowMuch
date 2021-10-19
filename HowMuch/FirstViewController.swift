@@ -21,6 +21,14 @@ class ViewController: UIViewController {
         // 다크모드 미적용.
         overrideUserInterfaceStyle = .light
 
+        if let userId = UserDefaults.standard.string(forKey: "id") {
+            if let userPwd = UserDefaults.standard.string(forKey: "pwd") {
+                print("자동로그인 정보 존재. 메인 화면으로 이동")
+                
+                self.performSegue(withIdentifier: "showMain", sender: self)
+            }
+        }
+        
         // navigationBar back button image change
         self.navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
@@ -41,6 +49,11 @@ class ViewController: UIViewController {
     
     @IBAction func emailLoginClicked(_ sender: UIButton) {
         performSegue(withIdentifier: "segueEmailLogin", sender: sender)
+    }
+    
+    // unwind segue 사용하기 위한 메소드
+    @IBAction func unwindFirstVC(_ segue: UIStoryboardSegue) {
+        
     }
     
 }
