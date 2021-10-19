@@ -15,6 +15,7 @@ class emailLoginViewController : UIViewController {
 
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPwd: UITextField!
+    @IBOutlet weak var cbAutoLogin: CheckBox!
     
     // 다음 누르면 입력창 넘어가기, 완료 누르면 키보드 내려가기
     @objc func didEndOnExit(_ sender: UITextField) {
@@ -103,6 +104,13 @@ class emailLoginViewController : UIViewController {
                 let loginSuccess: Bool = loginCheck(id: email, pwd: password)
                 if loginSuccess {
                     print("로그인 성공")
+                    
+                    if (cbAutoLogin.isChecked) {
+                        UserDefaults.standard.setValue(email, forKey: "id")
+                        UserDefaults.standard.setValue(password, forKey: "pwd")
+                        print("자동로그인 계정 정보 저장")
+                    }
+                    
                     if let removable = self.view.viewWithTag(102) {
                         removable.removeFromSuperview()
                     }
