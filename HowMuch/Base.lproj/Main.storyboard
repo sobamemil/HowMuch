@@ -72,6 +72,9 @@
                                     </attributedString>
                                     <color key="titleColor" systemColor="systemGreenColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cE1-l0-3rb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqu-Ii-slN">
                                 <rect key="frame" x="20" y="631" width="374" height="42"/>
@@ -104,15 +107,6 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvB-TH-lLA">
-                                <rect key="frame" x="174" y="361" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="button"/>
-                                <connections>
-                                    <action selector="buttonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bLc-HC-QxE"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -124,7 +118,7 @@
                         <outlet property="btnKakaoLogin" destination="lqu-Ii-slN" id="aK2-gm-tnP"/>
                         <segue destination="YjY-EF-ESJ" kind="show" identifier="segueEmailLogin" id="G2h-IB-TtO"/>
                         <segue destination="kEz-gS-6hh" kind="show" identifier="showMain" id="EBI-9Z-tTo"/>
-                        <segue destination="lXp-UD-XIK" kind="show" id="om8-Ly-NKV"/>
+                        <segue destination="lXp-UD-XIK" kind="show" identifier="showSignup" id="om8-Ly-NKV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -134,7 +128,7 @@
         <!--회원가입-->
         <scene sceneID="dxJ-Zi-tWO">
             <objects>
-                <viewController id="lXp-UD-XIK" sceneMemberID="viewController">
+                <viewController id="lXp-UD-XIK" customClass="signupViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YoU-XT-kj8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,14 +212,26 @@
                                     <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" systemColor="systemGray4Color"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="registClicked:" destination="lXp-UD-XIK" eventType="touchUpInside" id="gvy-A0-H3p"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AHw-19-J4T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="회원가입" largeTitleDisplayMode="always" id="G2E-8t-LRq"/>
+                    <connections>
+                        <outlet property="tfID" destination="FFw-oP-dLc" id="EM4-4I-b9Y"/>
+                        <outlet property="tfName" destination="a7V-sW-EDW" id="ndV-cw-aHJ"/>
+                        <outlet property="tfPNumber" destination="uXy-ob-sRP" id="D08-3r-TVe"/>
+                        <outlet property="tfPW" destination="sM5-aR-Nbj" id="Ggj-7j-ebA"/>
+                        <outlet property="tfPW2" destination="up0-7A-iKq" id="f6V-jb-zON"/>
+                        <segue destination="BKw-Ae-LOL" kind="unwind" identifier="unwindFirstVC" unwindAction="unwindFirstVC:" id="rGe-KL-V2T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qW0-xI-7RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="BKw-Ae-LOL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1137.68115942029" y="116.51785714285714"/>
         </scene>
@@ -425,7 +431,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="EBI-9Z-tTo"/>
+        <segue reference="WY9-7O-BCO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

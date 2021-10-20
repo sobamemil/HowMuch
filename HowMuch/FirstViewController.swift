@@ -52,41 +52,12 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "segueEmailLogin", sender: sender)
     }
     
+    @IBAction func signupClicked(_ sender: Any) {
+        performSegue(withIdentifier: "showSignup", sender: self)
+    }
+    
     // unwind segue 사용하기 위한 메소드
     @IBAction func unwindFirstVC(_ segue: UIStoryboardSegue) {
         
     }
-    
-    @IBAction func buttonClick(_ sender: Any) {
-        postTest()
-    }
-    
-    func postTest() {
-            let url = "https://ptsv2.com/t/6ezif-1634703985/post"
-            var request = URLRequest(url: URL(string: url)!)
-            request.httpMethod = "POST"
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.timeoutInterval = 10
-            
-            // POST 로 보낼 정보
-            let params = ["id":"아이디", "pw":"비밀번호"] as Dictionary
-        
-//          parameter : id, pw, name, addres, email, phonenumber
-        
-            // httpBody 에 parameters 추가
-            do {
-                try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
-            } catch {
-                print("http Body Error")
-            }
-            
-            AF.request(request).responseString { (response) in
-                switch response.result {
-                case .success:
-                    print("POST 성공")
-                case .failure(let error):
-                    print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
-                }
-            }
-        }
 }
