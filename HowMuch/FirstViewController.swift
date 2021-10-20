@@ -62,14 +62,14 @@ class ViewController: UIViewController {
     }
     
     func postTest() {
-            let url = "172.17.66.49:8080"
+            let url = "https://ptsv2.com/t/6ezif-1634703985/post"
             var request = URLRequest(url: URL(string: url)!)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.timeoutInterval = 10
             
             // POST 로 보낼 정보
-            let params = ["id":"아이디", "pw":"패스워드"] as Dictionary
+            let params = ["id":"아이디", "pw":"비밀번호"] as Dictionary
         
 //          parameter : id, pw, name, addres, email, phonenumber
         

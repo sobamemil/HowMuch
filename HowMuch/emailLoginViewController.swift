@@ -130,18 +130,17 @@ class emailLoginViewController : UIViewController {
             }
         
         
-        
-        let url = "172.17.66.49:8080"
-                AF.request(url,
-                           method: .get,
-                           parameters: nil,
-                           encoding: URLEncoding.default,
-                           headers: ["Content-Type":"application/json", "Accept":"application/json"])
-                    .validate(statusCode: 200..<300)
-                    .responseJSON { (json) in
-                        //여기서 가져온 데이터를 자유롭게 활용하세요.
-                        print(json)
-                }
+//        let url = "172.17.66.49:8080"
+//                AF.request(url,
+//                           method: .get,
+//                           parameters: nil,
+//                           encoding: URLEncoding.default,
+//                           headers: ["Content-Type":"application/json", "Accept":"application/json"])
+//                    .validate(statusCode: 200..<300)
+//                    .responseJSON { (json) in
+//                        //여기서 가져온 데이터를 자유롭게 활용하세요.
+//                        print(json)
+//                }
     }
 }
 
