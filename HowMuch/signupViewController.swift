@@ -17,8 +17,6 @@ class signupViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     @IBAction func registClicked(_ sender: Any) {
@@ -57,6 +55,11 @@ class signupViewController : UIViewController {
                     })
                     self.present(alert, animated: true, completion: nil)
                 case .failure(let error):
+                    
+                    let alert = UIAlertController(title: "Request Error", message: "관리자에게 문의하세요.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "확인", style: .destructive))
+                    self.present(alert, animated: true, completion: nil)
+                    
                     print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
                 }
             }

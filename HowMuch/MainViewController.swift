@@ -9,8 +9,6 @@ import UIKit
 
 class MainViewController : UIViewController {
     override func viewDidLoad() {
-        // 다크모드 미적용.
-        overrideUserInterfaceStyle = .light
         // 내비게이션 백버튼 숨김
         navigationItem.hidesBackButton = true
     }

@@ -19,11 +19,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        // 다크모드 미적용.
-        overrideUserInterfaceStyle = .light
-
-        if let userId = UserDefaults.standard.string(forKey: "id") {
-            if let userPwd = UserDefaults.standard.string(forKey: "pwd") {
+        if UserDefaults.standard.string(forKey: "id") != nil {
+            if UserDefaults.standard.string(forKey: "pwd") != nil {
                 print("자동로그인 정보 존재. 메인 화면으로 이동")
                 
                 self.performSegue(withIdentifier: "showMain", sender: self)
