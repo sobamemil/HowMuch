@@ -17,6 +17,13 @@ class signupViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // textField에 underline 적용
+        tfID.setUnderLine()
+        tfName.setUnderLine()
+        tfPW.setUnderLine()
+        tfPW2.setUnderLine()
+        tfPNumber.setUnderLine()
     }
     
     @IBAction func registClicked(_ sender: Any) {
