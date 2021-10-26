@@ -17,6 +17,19 @@ class emailLoginViewController : UIViewController {
     @IBOutlet weak var tfPwd: UITextField!
     @IBOutlet weak var cbAutoLogin: CheckBox!
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+            // Create an indicator.
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            activityIndicator.center = self.view.center
+            activityIndicator.color = UIColor.red
+            // Also show the indicator even when the animation is stopped.
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.style = UIActivityIndicatorView.Style.white
+            // Start animation.
+            activityIndicator.stopAnimating()
+            return activityIndicator }()
+    
     // 다음 누르면 입력창 넘어가기, 완료 누르면 키보드 내려가기
     @objc func didEndOnExit(_ sender: UITextField) {
         if tfEmail.isFirstResponder {
@@ -47,6 +60,8 @@ class emailLoginViewController : UIViewController {
         // textfield에 underline을 생성하기 위한 코드
         tfEmail.setUnderLine()
         tfPwd.setUnderLine()
+        
+        self.view.addSubview(self.activityIndicator)
     }
     
     // "이메일로 로그인" 버튼 클릭
@@ -54,38 +69,38 @@ class emailLoginViewController : UIViewController {
         // 옵셔널 바인딩 & 예외 처리 : Textfield가 빈문자열이 아니고, nil이 아닐 때
             guard let id = tfEmail.text, !id.isEmpty else { return }
             guard let pwd = tfPwd.text, !pwd.isEmpty else { return }
-
+        
         if userModel.isValidEmail(id: id){
-                if let removable = self.view.viewWithTag(100) {
-                    removable.removeFromSuperview()
-                }
+            if let removable = self.view.viewWithTag(100) {
+                removable.removeFromSuperview()
             }
-            else {
-                shakeTextField(textField: tfEmail)
-                let idLabel = UILabel(frame: CGRect(x: 68, y: 350, width: 279, height: 45))
-                idLabel.text = "이메일 형식을 확인해 주세요"
-                idLabel.textColor = UIColor.red
-                idLabel.tag = 100
-
+        } else {
+            shakeTextField(textField: tfEmail)
+            let idLabel = UILabel(frame: CGRect(x: 68, y: 350, width: 279, height: 45))
+            idLabel.text = "이메일 형식을 확인해 주세요"
+            idLabel.textColor = UIColor.red
+            idLabel.tag = 100
+            
 //                self.view.addSubview(emailLabel)
-            } // 이메일 형식 오류
+        } // 이메일 형식 오류
 
         if userModel.isValidPassword(pwd: pwd){
-                if let removable = self.view.viewWithTag(101) {
-                    removable.removeFromSuperview()
-                }
+            if let removable = self.view.viewWithTag(101) {
+                removable.removeFromSuperview()
             }
-            else{
-                shakeTextField(textField: tfPwd)
-                let pwdLabel = UILabel(frame: CGRect(x: 68, y: 435, width: 279, height: 45))
-                pwdLabel.text = "비밀번호 형식을 확인해 주세요"
-                pwdLabel.textColor = UIColor.red
-                pwdLabel.tag = 101
-
+        } else{
+            shakeTextField(textField: tfPwd)
+            let pwdLabel = UILabel(frame: CGRect(x: 68, y: 435, width: 279, height: 45))
+            pwdLabel.text = "비밀번호 형식을 확인해 주세요"
+            pwdLabel.textColor = UIColor.red
+            pwdLabel.tag = 101
+            
 //                self.view.addSubview(passwordLabel)
-            } // 비밀번호 형식 오류
+        } // 비밀번호 형식 오류
 
         if userModel.isValidEmail(id: id) && userModel.isValidPassword(pwd: pwd) {
+            self.activityIndicator.startAnimating()
+            
             let url = "http://49.161.233.189:8080/user/login"
             var request = URLRequest(url: URL(string: url)!)
             request.httpMethod = "POST"
@@ -105,6 +120,7 @@ class emailLoginViewController : UIViewController {
             }
 
             AF.request(request).responseString { (response) in
+                self.activityIndicator.stopAnimating()
                 switch response.result {
                 case .success:
                     if(response.value == "true") {
