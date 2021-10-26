@@ -38,50 +38,7 @@ class emailLoginViewController : UIViewController {
             })
         })
     }
-    
-    // 로그인 method
-    func loginCheck(id: String, pwd: String) -> Bool {
-        let url = "http://49.161.233.189:8080/user/login"
-        var request = URLRequest(url: URL(string: url)!)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.timeoutInterval = 10
-
-        // POST 로 보낼 정보
-        let params = ["id":id, "pw":pwd] as Dictionary
-
-        //  signup parameter : id, pw, name, addres, email, phonenumber
-
-        // httpBody 에 parameters 추가
-        do {
-            try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
-        } catch {
-            print("http Body Error")
-        }
-
-        
-        var bool = false
-        
-        AF.request(request).responseString { (response) in
-            print(response)
-            switch response.result {
-            case .success:
-                bool = true
-            case .failure(let error):
-                let alert = UIAlertController(title: "Request Error", message: "관리자에게 문의하세요.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "확인", style: .destructive))
-                self.present(alert, animated: true, completion: nil)
-                
-                print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
-                
-                bool = false
-            }
-        }
-        
-        return bool
-    }
        
-    
     override func viewDidLoad() {
         // 키보드 내리기
         tfEmail.addTarget(self, action: #selector(didEndOnExit), for: UIControl.Event.editingDidEndOnExit)
@@ -90,73 +47,99 @@ class emailLoginViewController : UIViewController {
         // textfield에 underline을 생성하기 위한 코드
         tfEmail.setUnderLine()
         tfPwd.setUnderLine()
-        
     }
     
     // "이메일로 로그인" 버튼 클릭
     @IBAction func emailLoginClicked(_ sender: UIButton) {
         // 옵셔널 바인딩 & 예외 처리 : Textfield가 빈문자열이 아니고, nil이 아닐 때
-            guard let email = tfEmail.text, !email.isEmpty else { return }
-            guard let password = tfPwd.text, !password.isEmpty else { return }
+            guard let id = tfEmail.text, !id.isEmpty else { return }
+            guard let pwd = tfPwd.text, !pwd.isEmpty else { return }
 
-        if userModel.isValidEmail(id: email){
+        if userModel.isValidEmail(id: id){
                 if let removable = self.view.viewWithTag(100) {
                     removable.removeFromSuperview()
                 }
             }
             else {
                 shakeTextField(textField: tfEmail)
-                let emailLabel = UILabel(frame: CGRect(x: 68, y: 350, width: 279, height: 45))
-                emailLabel.text = "이메일 형식을 확인해 주세요"
-                emailLabel.textColor = UIColor.red
-                emailLabel.tag = 100
+                let idLabel = UILabel(frame: CGRect(x: 68, y: 350, width: 279, height: 45))
+                idLabel.text = "이메일 형식을 확인해 주세요"
+                idLabel.textColor = UIColor.red
+                idLabel.tag = 100
 
 //                self.view.addSubview(emailLabel)
             } // 이메일 형식 오류
 
-        if userModel.isValidPassword(pwd: password){
+        if userModel.isValidPassword(pwd: pwd){
                 if let removable = self.view.viewWithTag(101) {
                     removable.removeFromSuperview()
                 }
             }
             else{
                 shakeTextField(textField: tfPwd)
-                let passwordLabel = UILabel(frame: CGRect(x: 68, y: 435, width: 279, height: 45))
-                passwordLabel.text = "비밀번호 형식을 확인해 주세요"
-                passwordLabel.textColor = UIColor.red
-                passwordLabel.tag = 101
+                let pwdLabel = UILabel(frame: CGRect(x: 68, y: 435, width: 279, height: 45))
+                pwdLabel.text = "비밀번호 형식을 확인해 주세요"
+                pwdLabel.textColor = UIColor.red
+                pwdLabel.tag = 101
 
 //                self.view.addSubview(passwordLabel)
             } // 비밀번호 형식 오류
 
-        if userModel.isValidEmail(id: email) && userModel.isValidPassword(pwd: password) {
-                let loginSuccess: Bool = loginCheck(id: email, pwd: password)
-                if loginSuccess {
-                    print("로그인 성공")
+        if userModel.isValidEmail(id: id) && userModel.isValidPassword(pwd: pwd) {
+            let url = "http://49.161.233.189:8080/user/login"
+            var request = URLRequest(url: URL(string: url)!)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.timeoutInterval = 10
 
-                    if (cbAutoLogin.isChecked) {
-                        UserDefaults.standard.setValue(email, forKey: "id")
-                        UserDefaults.standard.setValue(password, forKey: "pwd")
-                        print("자동로그인 계정 정보 저장")
+            // POST 로 보낼 정보
+            let params = ["id":id, "pw":pwd] as Dictionary
+
+            //  signup parameter : id, pw, name, addres, email, phonenumber
+
+            // httpBody 에 parameters 추가
+            do {
+                try request.httpBody = JSONSerialization.data(withJSONObject: params, options: [])
+            } catch {
+                print("http Body Error")
+            }
+
+            AF.request(request).responseString { (response) in
+                switch response.result {
+                case .success:
+                    if(response.value == "true") {
+                        print("로그인 성공")
+
+                        if (self.cbAutoLogin.isChecked) {
+                            UserDefaults.standard.setValue(id, forKey: "id")
+                            UserDefaults.standard.setValue(pwd, forKey: "pwd")
+                            print("자동로그인 계정 정보 저장")
+                        }
+
+                        if let removable = self.view.viewWithTag(102) {
+                            removable.removeFromSuperview()
+                        }
+                        self.performSegue(withIdentifier: "showMain", sender: self)
+                    } else {
+                        print("로그인 실패")
+                        self.shakeTextField(textField: self.tfEmail)
+                        self.shakeTextField(textField: self.tfPwd)
+                        let loginFailLabel = UILabel(frame: CGRect(x: 68, y: 510, width: 279, height: 45))
+                        loginFailLabel.text = "아이디나 비밀번호가 다릅니다."
+                        loginFailLabel.textColor = UIColor.red
+                        loginFailLabel.tag = 102
+
+                        self.view.addSubview(loginFailLabel)
                     }
-
-                    if let removable = self.view.viewWithTag(102) {
-                        removable.removeFromSuperview()
-                    }
-                    self.performSegue(withIdentifier: "showMain", sender: self)
-                }
-                else {
-                    print("로그인 실패")
-                    shakeTextField(textField: tfEmail)
-                    shakeTextField(textField: tfPwd)
-                    let loginFailLabel = UILabel(frame: CGRect(x: 68, y: 510, width: 279, height: 45))
-                    loginFailLabel.text = "아이디나 비밀번호가 다릅니다."
-                    loginFailLabel.textColor = UIColor.red
-                    loginFailLabel.tag = 102
-
-                    self.view.addSubview(loginFailLabel)
+                case .failure(let error):
+                    let alert = UIAlertController(title: "Request Error", message: "관리자에게 문의하세요.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "확인", style: .destructive))
+                    self.present(alert, animated: true, completion: nil)
+                    
+                    print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
                 }
             }
+        }
         
         
 //        let url = "172.17.66.49:8080"
@@ -176,7 +159,6 @@ class emailLoginViewController : UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
 }
 
 // 사용자 로그인 계정 정보
