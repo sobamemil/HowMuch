@@ -23,9 +23,11 @@ class emailLoginViewController : UIViewController {
             activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
             activityIndicator.center = self.view.center
             activityIndicator.color = UIColor.red
+        
             // Also show the indicator even when the animation is stopped.
             activityIndicator.hidesWhenStopped = true
-            activityIndicator.style = UIActivityIndicatorView.Style.white
+            activityIndicator.style = UIActivityIndicatorView.Style.medium
+        
             // Start animation.
             activityIndicator.stopAnimating()
             return activityIndicator }()
@@ -101,6 +103,9 @@ class emailLoginViewController : UIViewController {
         if userModel.isValidEmail(id: id) && userModel.isValidPassword(pwd: pwd) {
             self.activityIndicator.startAnimating()
             
+            // 터치 이벤트 막기
+            self.view.isUserInteractionEnabled = false
+
             let url = "http://49.161.233.189:8080/user/login"
             var request = URLRequest(url: URL(string: url)!)
             request.httpMethod = "POST"
@@ -121,6 +126,10 @@ class emailLoginViewController : UIViewController {
 
             AF.request(request).responseString { (response) in
                 self.activityIndicator.stopAnimating()
+                
+                // 터치 이벤트 풀기
+                self.view.isUserInteractionEnabled = true
+                
                 switch response.result {
                 case .success:
                     if(response.value == "true") {
@@ -156,19 +165,6 @@ class emailLoginViewController : UIViewController {
                 }
             }
         }
-        
-        
-//        let url = "172.17.66.49:8080"
-//                AF.request(url,
-//                           method: .get,
-//                           parameters: nil,
-//                           encoding: URLEncoding.default,
-//                           headers: ["Content-Type":"application/json", "Accept":"application/json"])
-//                    .validate(statusCode: 200..<300)
-//                    .responseJSON { (json) in
-//                        //여기서 가져온 데이터를 자유롭게 활용하세요.
-//                        print(json)
-//                }
     }
     
     // 여백 터치 시 키보드 내려가도록 하는 코드
