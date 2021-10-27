@@ -1,5 +1,5 @@
 //
-//  emailLoginViewController.swift
+//  EmailLoginViewController.swift
 //  HowMuch
 //
 //  Created by 심찬영 on 2021/10/18.
@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import SwiftUI
 
-class emailLoginViewController : UIViewController {
+class EmailLoginViewController : UIViewController {
     
     var userModel = UserModel() // 사용자 계정 인스턴스 생성
 
@@ -62,6 +62,9 @@ class emailLoginViewController : UIViewController {
         // textfield에 underline을 생성하기 위한 코드
         tfEmail.setUnderLine()
         tfPwd.setUnderLine()
+        
+        // navigationBar backItem title change
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: nil, action: nil)
         
         self.view.addSubview(self.activityIndicator)
     }
