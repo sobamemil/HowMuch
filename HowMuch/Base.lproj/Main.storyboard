@@ -275,7 +275,7 @@
         <!--Email Login View Controller-->
         <scene sceneID="8HC-nW-rck">
             <objects>
-                <viewController id="YjY-EF-ESJ" customClass="emailLoginViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YjY-EF-ESJ" customClass="EmailLoginViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M1i-HF-mer">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
