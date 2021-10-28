@@ -8,6 +8,9 @@
 import UIKit
 
 class MainViewController : UIViewController {
+    @IBOutlet weak var btnImageSearch: UIButton!
+    @IBOutlet weak var btnVoiceSearch: UIButton!
+    
     override func viewDidLoad() {
         // 내비게이션 백버튼 숨김
         navigationItem.hidesBackButton = true
