@@ -71,10 +71,12 @@ class EmailLoginViewController : UIViewController {
     
     // "이메일로 로그인" 버튼 클릭
     @IBAction func emailLoginClicked(_ sender: UIButton) {
+//        performSegue(withIdentifier: "showMain", sender: self)
+//
         // 옵셔널 바인딩 & 예외 처리 : Textfield가 빈문자열이 아니고, nil이 아닐 때
             guard let id = tfEmail.text, !id.isEmpty else { return }
             guard let pwd = tfPwd.text, !pwd.isEmpty else { return }
-        
+
         if userModel.isValidEmail(id: id){
             if let removable = self.view.viewWithTag(100) {
                 removable.removeFromSuperview()
@@ -85,7 +87,7 @@ class EmailLoginViewController : UIViewController {
             idLabel.text = "이메일 형식을 확인해 주세요"
             idLabel.textColor = UIColor.red
             idLabel.tag = 100
-            
+
 //                self.view.addSubview(emailLabel)
         } // 이메일 형식 오류
 
@@ -99,13 +101,13 @@ class EmailLoginViewController : UIViewController {
             pwdLabel.text = "비밀번호 형식을 확인해 주세요"
             pwdLabel.textColor = UIColor.red
             pwdLabel.tag = 101
-            
+
 //                self.view.addSubview(passwordLabel)
         } // 비밀번호 형식 오류
 
         if userModel.isValidEmail(id: id) && userModel.isValidPassword(pwd: pwd) {
             self.activityIndicator.startAnimating()
-            
+
             // 터치 이벤트 막기
             self.view.isUserInteractionEnabled = false
 
@@ -129,10 +131,10 @@ class EmailLoginViewController : UIViewController {
 
             AF.request(request).responseString { (response) in
                 self.activityIndicator.stopAnimating()
-                
+
                 // 터치 이벤트 풀기
                 self.view.isUserInteractionEnabled = true
-                
+
                 switch response.result {
                 case .success:
                     if(response.value == "true") {
@@ -163,7 +165,7 @@ class EmailLoginViewController : UIViewController {
                     let alert = UIAlertController(title: "Request Error", message: "관리자에게 문의하세요.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "확인", style: .destructive))
                     self.present(alert, animated: true, completion: nil)
-                    
+
                     print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
                 }
             }
