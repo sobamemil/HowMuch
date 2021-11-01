@@ -17,6 +17,7 @@
 		575626ED2717E87800EF6428 /* HowMuchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626EC2717E87800EF6428 /* HowMuchTests.swift */; };
 		575626F72717E87900EF6428 /* HowMuchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F62717E87900EF6428 /* HowMuchUITests.swift */; };
 		575626F92717E87900EF6428 /* HowMuchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */; };
+		576C7BF7272F9F9A0022ECCB /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C7BF6272F9F9A0022ECCB /* ARViewController.swift */; };
 		57B4A3C1271FE14700A62731 /* signupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B4A3C0271FE14700A62731 /* signupViewController.swift */; };
 		57E74A43271D745F000566D4 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A42271D745F000566D4 /* EmailLoginViewController.swift */; };
 		57E74A46271D7838000566D4 /* checkBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A45271D7838000566D4 /* checkBox.swift */; };
@@ -57,6 +58,7 @@
 		575626F22717E87800EF6428 /* HowMuchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowMuchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575626F62717E87900EF6428 /* HowMuchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMuchUITests.swift; sourceTree = "<group>"; };
 		575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMuchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		576C7BF6272F9F9A0022ECCB /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		57B4A3C0271FE14700A62731 /* signupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signupViewController.swift; sourceTree = "<group>"; };
 		57E74A42271D745F000566D4 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		57E74A45271D7838000566D4 /* checkBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkBox.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				575626D62717E87400EF6428 /* FirstViewController.swift */,
 				57E74A42271D745F000566D4 /* EmailLoginViewController.swift */,
 				57E74A4C271DC5F4000566D4 /* MainViewController.swift */,
+				576C7BF6272F9F9A0022ECCB /* ARViewController.swift */,
 				575626D82717E87400EF6428 /* Main.storyboard */,
 				57B4A3C0271FE14700A62731 /* signupViewController.swift */,
 				575626DE2717E87800EF6428 /* Assets.xcassets */,
@@ -301,6 +304,7 @@
 				57E74A46271D7838000566D4 /* checkBox.swift in Sources */,
 				575626DD2717E87400EF6428 /* HowMuch.xcdatamodeld in Sources */,
 				57E74A4D271DC5F4000566D4 /* MainViewController.swift in Sources */,
+				576C7BF7272F9F9A0022ECCB /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
