@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kEz-gS-6hh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JXT-LP-oZc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -281,7 +281,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="kKk-0J-EIi" kind="show" id="duD-xT-whY"/>
+                                    <action selector="imageSearchClicked:" destination="kEz-gS-6hh" eventType="touchUpInside" id="s96-cl-NQG"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFz-gF-sFD">
@@ -463,6 +463,7 @@
                         <outlet property="btnLife" destination="6Jc-rl-ZIZ" id="RXg-ns-bPW"/>
                         <outlet property="btnVoiceSearch" destination="PFz-gF-sFD" id="3L2-hS-6rX"/>
                         <outlet property="btnWorkout" destination="gMb-kj-j5c" id="W2n-99-joY"/>
+                        <segue destination="kKk-0J-EIi" kind="show" identifier="showCamera" id="3JP-Hb-WKo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuu-rc-DCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

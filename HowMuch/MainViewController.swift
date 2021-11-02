@@ -30,6 +30,11 @@ class MainViewController : UIViewController {
   
     }
     
+    
+    @IBAction func imageSearchClicked(_ sender: Any) {
+        performSegue(withIdentifier: "showCamera", sender: self)
+    }
+    
     @IBAction func logoutClicked(_ sender: Any) {
         UserDefaults.standard.removeObject(forKey: "id")
         UserDefaults.standard.removeObject(forKey: "pwd")

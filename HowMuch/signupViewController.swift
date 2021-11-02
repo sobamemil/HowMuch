@@ -53,14 +53,23 @@ class signupViewController : UIViewController {
             }
             
             AF.request(request).responseString { (response) in
-                print(response)
+                
                 switch response.result {
                 case .success:
-                    let alert = UIAlertController(title: "회원가입 성공", message: nil, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "확인", style: .default) {_ in
-                        self.performSegue(withIdentifier: "unwindFirstVC", sender: self)
-                    })
-                    self.present(alert, animated: true, completion: nil)
+                    // response.value가 true면 회원가입 성공
+                    // false면 회원가입 실패
+                    if(response.value! == "true") {
+                        let alert = UIAlertController(title: "회원가입 성공", message: nil, preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "확인", style: .default) {_ in
+                            self.performSegue(withIdentifier: "unwindFirstVC", sender: self)
+                        })
+                        self.present(alert, animated: true, completion: nil)
+                    } else {
+                        let alert = UIAlertController(title: "회원가입 실패", message: "이미 존재하는 아이디입니다.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                        self.present(alert, animated: true)
+                    }
+                    
                 case .failure(let error):
                     
                     let alert = UIAlertController(title: "Request Error", message: "관리자에게 문의하세요.", preferredStyle: .alert)
