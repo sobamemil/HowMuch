@@ -23,6 +23,8 @@ class MainViewController : UIViewController {
     @IBOutlet weak var btnElectonic: UIButton!
     @IBOutlet weak var btnETC: UIButton!
     
+    var curType : String = ""
+    
     
     override func viewDidLoad() {
         // 내비게이션 백버튼 숨김
@@ -43,46 +45,25 @@ class MainViewController : UIViewController {
         print("로그아웃 되었습니다.")
         print("UserDefault Account Data Removed!!!")
     }
-//    @IBAction func imageSendClicked(_ sender: Any) {
-//        func uploadDiary(date: String, emoji: String, content: String, _ photo : UIImage, url: String){
-//                    //함수 매개변수는 POST할 데이터, url
-//
-//                    let body : Parameters = [
-//                        "date" : date,
-//                        "emoji" : emoji,
-//                        "content" : content,
-//                        "user" : 2
-//                    ]    //POST 함수로 전달할 String 데이터, 이미지 데이터는 제외하고 구성
-//
-//                    //multipart 업로드
-//                    AF.upload(multipartFormData: { (multipart) in
-//                        if let imageData = photo.jpegData(compressionQuality: 1) {
-//                            multipart.append(imageData, withName: "photo", fileName: "photo.jpg", mimeType: "image/jpeg")
-//                            //이미지 데이터를 POST할 데이터에 덧붙임
-//                        }
-//                        for (key, value) in body {
-//                            multipart.append("\(value)".data(using: .utf8, allowLossyConversion: false)!, withName: "\(key)")
-//                            //이미지 데이터 외에 같이 전달할 데이터 (여기서는 user, emoji, date, content 등)
-//                        }
-//                    }, to: url    //전달할 url
-//                    ,method: .post        //전달 방식
-//                    ,headers: headers).responseJSON(completionHandler: { (response) in    //헤더와 응답 처리
-//                        print(response)
-//
-//                        if let err = response.error{    //응답 에러
-//                            print(err)
-//                            return
-//                        }
-//                        print("success")        //응답 성공
-//
-//                        let json = response.data
-//
-//                        if (json != nil){
-//                            print(json)
-//                        }
-//                    })
-//
-//                }
-//    }
+
+    @IBAction func funitureClicked(_ sender: Any) {
+        curType = (btnFurniture.titleLabel?.text)!
+        performSegue(withIdentifier: "showItemSelect", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        guard let nextViewController : ItemSelectViewController = segue.destination as? ItemSelectViewController else {
+            print("1")
+            return
+        }
+        
+        guard let sender = sender as? MainViewController else {
+            print("2")
+            return
+        }
+
+        nextViewController.willSearchItem = sender.curType
+    }
     
 }
