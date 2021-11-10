@@ -530,8 +530,8 @@
                     <connections>
                         <outlet property="btnSend" destination="Kxo-r7-4Ma" id="wxx-ou-EVx"/>
                         <outlet property="imgV1" destination="7Mp-Hh-B2w" id="Get-kh-7Xf"/>
-                        <segue destination="kKk-0J-EIi" kind="show" id="MIv-HK-bcn"/>
                         <segue destination="JPh-ZH-mLn" kind="show" id="nrV-fu-Fir"/>
+                        <segue destination="kKk-0J-EIi" kind="show" identifier="showCameraMeasure" id="BVq-PG-oFi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scr-mw-EaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
