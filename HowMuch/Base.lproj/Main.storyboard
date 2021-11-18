@@ -530,8 +530,8 @@
                     <connections>
                         <outlet property="btnSend" destination="Kxo-r7-4Ma" id="wxx-ou-EVx"/>
                         <outlet property="imgV1" destination="7Mp-Hh-B2w" id="Get-kh-7Xf"/>
-                        <segue destination="JPh-ZH-mLn" kind="show" id="nrV-fu-Fir"/>
                         <segue destination="kKk-0J-EIi" kind="show" identifier="showCameraMeasure" id="BVq-PG-oFi"/>
+                        <segue destination="Vur-dc-sMa" kind="show" identifier="showItemSelect2" id="ExG-9f-h2j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scr-mw-EaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -793,7 +793,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bpi-SX-jJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137.68115942029" y="1711.6071428571429"/>
+            <point key="canvasLocation" x="1951" y="1712"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5Zs-iz-dUK">
@@ -888,7 +888,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vY1-fN-rqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="1712"/>
+            <point key="canvasLocation" x="2745" y="1712"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q4s-Ye-nhw">
@@ -908,6 +908,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="ExG-9f-h2j"/>
         <segue reference="WY9-7O-BCO"/>
         <segue reference="7EO-7a-Bdc"/>
     </inferredMetricsTieBreakers>

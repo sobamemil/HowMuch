@@ -13,6 +13,8 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var imgV1: UIImageView!
     @IBOutlet weak var btnSend: UIButton!
     
+    private var returnedItem = ""
+    
     var imagePicker : UIImagePickerController!
 //    let imageServerURL = "https://ptsv2.com/t/6ezif-1634703985/post"
     
@@ -82,9 +84,14 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
             response in
             print(response)
 
-             // 길이 측정 화면으로 이동
-            self.performSegue(withIdentifier: "showCameraMeasure", sender: self)
+//            // 길이 측정 화면으로 이동
+//            self.performSegue(withIdentifier: "showCameraMeasure", sender: self)
 
+            // 받은 품목을 다음 viewController로 넘겨주고
+            // 품목 선택 화면으로 이동
+            
+            self.performSegue(withIdentifier: "showItemSelect2", sender: self)
+            
         })
 //        ,headers: headers).responseJSON(completionHandler: { (response) in    //헤더와 응답 처리
 //            print(response)
@@ -102,5 +109,20 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
 //            }
 //        })
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let nextViewController : ItemSelectViewController = segue.destination as? ItemSelectViewController else {
+            print("nextViewController prepare failure")
+            return
+        }
+        
+        guard let sender = sender as? ImageRecognizeViewController else {
+            print("sender prepare failrue")
+            return
+        }
+
+        nextViewController.willSearchItem = sender.returnedItem
     }
 }
