@@ -13,7 +13,8 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var imgV1: UIImageView!
     @IBOutlet weak var btnSend: UIButton!
     
-    private var returnedItem = ""
+    // defalut -> 의자
+    private var returnedItem = "의자"
     
     var imagePicker : UIImagePickerController!
 //    let imageServerURL = "https://ptsv2.com/t/6ezif-1634703985/post"
@@ -50,8 +51,14 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     }
     
     @IBAction func imageSendClicked(_ sender: Any) {
-        print("눌렸습니다")
-        uploadPhoto(msg: "test1", imgV1.image!, url: imageServerURL)
+        print("imageSendClicked")
+        
+//        //이미지 업로드 메소드
+//        uploadPhoto(msg: "test1", imgV1.image!, url: imageServerURL)
+
+        // for test
+        self.performSegue(withIdentifier: "showItemSelect2", sender: self)
+
     }
     
     func uploadPhoto(msg: String, _ photo : UIImage, url: String){
