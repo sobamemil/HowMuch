@@ -33,6 +33,7 @@ class ItemSelectViewController : UIViewController {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         
+        (self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.estimatedItemSize = .zero
     }
     
     override func viewWillAppear(_ animated: Bool) {
