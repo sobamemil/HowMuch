@@ -29,7 +29,10 @@ class MainViewController : UIViewController {
     override func viewDidLoad() {
         // 내비게이션 백버튼 숨김
         navigationItem.hidesBackButton = true
-  
+
+        self.navigationItem.title = "강원도 원주시"
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: nil, action: nil)
     }
     
     

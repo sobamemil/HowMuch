@@ -246,7 +246,7 @@
             </objects>
             <point key="canvasLocation" x="1137.68115942029" y="116.51785714285714"/>
         </scene>
-        <!--강원도 원주시-->
+        <!--Main View Controller-->
         <scene sceneID="ijk-HB-eiF">
             <objects>
                 <viewController id="kEz-gS-6hh" customClass="MainViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
@@ -476,7 +476,7 @@
                         <viewLayoutGuide key="safeArea" id="3Ca-1r-oTb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="강원도 원주시" id="tiv-hb-XdG"/>
+                    <navigationItem key="navigationItem" id="tiv-hb-XdG"/>
                     <connections>
                         <outlet property="btnAir" destination="6Jc-rl-ZIZ" id="fii-mj-9D7"/>
                         <outlet property="btnBaby" destination="x5y-ba-oRy" id="hBN-ZC-8Ve"/>
@@ -756,7 +756,7 @@
                                 <rect key="frame" x="29" y="111" width="62" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="가구"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="가구"/>
                                 <connections>
                                     <action selector="furnitureClicked:" destination="Vur-dc-sMa" eventType="touchUpInside" id="0eO-CR-Oub"/>
                                 </connections>
@@ -765,7 +765,7 @@
                                 <rect key="frame" x="29" y="152" width="92" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="기타제품"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="기타제품"/>
                                 <connections>
                                     <action selector="etcClicked:" destination="Vur-dc-sMa" eventType="touchUpInside" id="asK-a5-sFX"/>
                                 </connections>
@@ -774,7 +774,7 @@
                                 <rect key="frame" x="99" y="113" width="88" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="주방용품"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="주방용품"/>
                                 <connections>
                                     <action selector="kitchenClicked:" destination="Vur-dc-sMa" eventType="touchUpInside" id="JQa-8k-193"/>
                                 </connections>
@@ -783,7 +783,7 @@
                                 <rect key="frame" x="195" y="113" width="87" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="생활용품"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="생활용품"/>
                                 <connections>
                                     <action selector="lifeClicked:" destination="Vur-dc-sMa" eventType="touchUpInside" id="DRa-NG-qfA"/>
                                 </connections>
@@ -792,7 +792,7 @@
                                 <rect key="frame" x="290" y="113" width="104" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="냉난방용품"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="냉난방용품"/>
                                 <connections>
                                     <action selector="airClicked:" destination="Vur-dc-sMa" eventType="touchUpInside" id="FXL-ge-sxt"/>
                                 </connections>
@@ -855,6 +855,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="YOt-s6-wY2"/>
                     <connections>
+                        <outlet property="btnAir" destination="BIJ-zD-XqU" id="c5f-ic-oNt"/>
+                        <outlet property="btnETC" destination="eOl-cO-REX" id="s2I-83-Iwf"/>
+                        <outlet property="btnFurniture" destination="wAG-rB-76r" id="WGj-rg-6Or"/>
+                        <outlet property="btnKitchen" destination="0p4-4l-ZFt" id="MJ3-ZJ-CnW"/>
+                        <outlet property="btnLife" destination="tVr-Je-CIg" id="rF7-Ts-uSA"/>
                         <outlet property="collectionView" destination="qVb-wT-ef0" id="nPf-9e-6m9"/>
                         <outlet property="tfItemSearch" destination="SsN-bc-HxG" id="R0L-c8-j2u"/>
                     </connections>
@@ -976,7 +981,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vzl-2F-htB"/>
+        <segue reference="ExG-9f-h2j"/>
         <segue reference="WY9-7O-BCO"/>
         <segue reference="7EO-7a-Bdc"/>
     </inferredMetricsTieBreakers>

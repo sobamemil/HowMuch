@@ -30,7 +30,7 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.backItem?.title = ""
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: nil, action: nil)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(takePhoto(_:)))
         imgV1.addGestureRecognizer(tapGesture)

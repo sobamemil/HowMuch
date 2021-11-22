@@ -11,6 +11,12 @@ class ItemSelectViewController : UIViewController {
     @IBOutlet weak var tfItemSearch: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var btnFurniture: UIButton!
+    @IBOutlet weak var btnKitchen: UIButton!
+    @IBOutlet weak var btnLife: UIButton!
+    @IBOutlet weak var btnAir: UIButton!
+    @IBOutlet weak var btnETC: UIButton!
+    
     
     let furniture = ["의자"]
     let kitchen = ["쌀통(예정)"]
@@ -20,6 +26,18 @@ class ItemSelectViewController : UIViewController {
     
     var curKind = "" {
         didSet {
+            btnColorReset()
+            if(curKind == "가구") {
+                btnFurniture?.tintColor = .purple
+            } else if(curKind == "주방용품") {
+                btnKitchen?.tintColor = .purple
+            } else if(curKind == "생활용품") {
+                btnLife?.tintColor = .purple
+            } else if(curKind == "냉난방용품") {
+                btnAir?.tintColor = .purple
+            } else if(curKind == "기타제품") {
+                btnETC?.tintColor = .purple
+            }
             self.collectionView?.reloadData()
         }
     }
@@ -34,6 +52,12 @@ class ItemSelectViewController : UIViewController {
         self.collectionView.dataSource = self
         
         (self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.estimatedItemSize = .zero
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: nil, action: nil)
+        
+        if(tfItemSearch.text == "") {
+            
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +84,13 @@ class ItemSelectViewController : UIViewController {
         curKind = "기타제품"
     }
     
-    
+    func btnColorReset() {
+        btnFurniture?.tintColor = .tintColor
+        btnKitchen?.tintColor = .tintColor
+        btnLife?.tintColor = .tintColor
+        btnAir?.tintColor = .tintColor
+        btnETC?.tintColor = .tintColor
+    }
     
     
 }
@@ -75,16 +105,12 @@ extension ItemSelectViewController: UICollectionViewDelegate, UICollectionViewDa
         case "주방용품" :
             return self.kitchen.count
         case "생활용품" :
-            print("생활용품 카운트")
             return self.life.count
         case "냉난방용품" :
-            print("냉난방용품 카운트")
             return self.air.count
         case "기타제품" :
             return etc.count
         default:
-            print(curKind)
-            print("default")
             return 0
         }
     }
@@ -92,7 +118,7 @@ extension ItemSelectViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CSCollectionViewCell
         
-        cell.backgroundColor = .lightGray
+        cell.backgroundColor = .systemGray6
         
         switch(curKind) {
         case "가구" :
@@ -147,9 +173,9 @@ extension ItemSelectViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let width = collectionView.frame.width / 3 - 1 ///  3등분하여 배치, 옆 간격이 1이므로 1을 빼줌
-        print("collectionView width=\(collectionView.frame.width)")
-        print("cell하나당 width=\(width)")
-        print("root view width = \(self.view.frame.width)")
+//        print("collectionView width=\(collectionView.frame.width)")
+//        print("cell하나당 width=\(width)")
+//        print("root view width = \(self.view.frame.width)")
 
         let size = CGSize(width: width, height: width)
         return size
