@@ -51,6 +51,26 @@ class MainViewController : UIViewController {
         performSegue(withIdentifier: "showItemSelect", sender: self)
     }
     
+    @IBAction func kitchenClicked(_ sender: Any) {
+        curType = (btnKitchen.titleLabel?.text)!
+        performSegue(withIdentifier: "showItemSelect", sender: self)
+    }
+    
+    @IBAction func lifeClicked(_ sender: Any) {
+        curType = (btnLife.titleLabel?.text)!
+        performSegue(withIdentifier: "showItemSelect", sender: self)
+    }
+    
+    @IBAction func airClicked(_ sender: Any) {
+        curType = (btnAir.titleLabel?.text)!
+        performSegue(withIdentifier: "showItemSelect", sender: self)
+    }
+    
+    @IBAction func etcClicked(_ sender: Any) {
+        curType = (btnETC.titleLabel?.text)!
+        performSegue(withIdentifier: "showItemSelect", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
         guard let nextViewController : ItemSelectViewController = segue.destination as? ItemSelectViewController else {
@@ -63,7 +83,7 @@ class MainViewController : UIViewController {
             return
         }
 
-        nextViewController.willSearchItem = sender.curType
+        nextViewController.curKind = sender.curType
     }
     
 }
