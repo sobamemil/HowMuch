@@ -45,6 +45,8 @@ class ItemSelectViewController : UIViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: nil, action: nil)
         
+        self.navigationItem.title = "품목선택"
+        
         if(tfItemSearch.text == "") {
             
         }

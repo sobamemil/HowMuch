@@ -849,6 +849,12 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIc-fR-lmu">
+                                <rect key="frame" x="20" y="793" width="374" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="선택완료"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="78l-4u-OfO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -32,6 +32,8 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: nil, action: nil)
         
+        self.navigationItem.title = "이미지 인식"
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(takePhoto(_:)))
         imgV1.addGestureRecognizer(tapGesture)
         imgV1.isUserInteractionEnabled = true
