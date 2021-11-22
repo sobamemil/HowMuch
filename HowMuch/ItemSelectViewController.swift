@@ -27,17 +27,7 @@ class ItemSelectViewController : UIViewController {
     var curKind = "" {
         didSet {
             btnColorReset()
-            if(curKind == "가구") {
-                btnFurniture?.tintColor = .purple
-            } else if(curKind == "주방용품") {
-                btnKitchen?.tintColor = .purple
-            } else if(curKind == "생활용품") {
-                btnLife?.tintColor = .purple
-            } else if(curKind == "냉난방용품") {
-                btnAir?.tintColor = .purple
-            } else if(curKind == "기타제품") {
-                btnETC?.tintColor = .purple
-            }
+            btnColorSet(curKind)
             self.collectionView?.reloadData()
         }
     }
@@ -58,6 +48,8 @@ class ItemSelectViewController : UIViewController {
         if(tfItemSearch.text == "") {
             
         }
+
+        btnColorSet(curKind)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +82,20 @@ class ItemSelectViewController : UIViewController {
         btnLife?.tintColor = .tintColor
         btnAir?.tintColor = .tintColor
         btnETC?.tintColor = .tintColor
+    }
+    
+    func btnColorSet(_ btn : String) {
+        if(btn == "가구") {
+            btnFurniture?.tintColor = .purple
+        } else if(btn == "주방용품") {
+            btnKitchen?.tintColor = .purple
+        } else if(btn == "생활용품") {
+            btnLife?.tintColor = .purple
+        } else if(btn == "냉난방용품") {
+            btnAir?.tintColor = .purple
+        } else if(btn == "기타제품") {
+            btnETC?.tintColor = .purple
+        }
     }
     
     
