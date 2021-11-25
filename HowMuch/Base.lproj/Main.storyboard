@@ -834,7 +834,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="품목">
                                                             <attributes>
-                                                                <font key="NSFont" size="17" name=".AppleSDGothicNeoI-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="17"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -854,6 +854,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="선택완료"/>
+                                <connections>
+                                    <action selector="doneClicked:" destination="Vur-dc-sMa" eventType="touchUpInside" id="Y4f-fd-0ie"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="78l-4u-OfO"/>
@@ -868,6 +871,7 @@
                         <outlet property="btnLife" destination="tVr-Je-CIg" id="rF7-Ts-uSA"/>
                         <outlet property="collectionView" destination="qVb-wT-ef0" id="nPf-9e-6m9"/>
                         <outlet property="tfItemSearch" destination="SsN-bc-HxG" id="R0L-c8-j2u"/>
+                        <segue destination="JPh-ZH-mLn" kind="show" identifier="showLastView" id="yns-sW-zID"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bpi-SX-jJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -987,7 +991,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ExG-9f-h2j"/>
+        <segue reference="vzl-2F-htB"/>
         <segue reference="WY9-7O-BCO"/>
         <segue reference="7EO-7a-Bdc"/>
     </inferredMetricsTieBreakers>

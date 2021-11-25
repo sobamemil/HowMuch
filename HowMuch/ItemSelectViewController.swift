@@ -18,11 +18,13 @@ class ItemSelectViewController : UIViewController {
     @IBOutlet weak var btnETC: UIButton!
     
     
-    let furniture = ["의자"]
-    let kitchen = ["쌀통(예정)"]
-    let life = ["액자", "벽시계(예정)", "이불(예정)"]
-    let air = ["선풍기(예정)"]
-    let etc = ["청소기(예정)", "냉장고(예정)"]
+    private let furniture = ["의자"]
+    private let kitchen = ["쌀통(예정)"]
+    private let life = ["액자", "벽시계(예정)", "이불(예정)"]
+    private let air = ["선풍기(예정)"]
+    private let etc = ["청소기(예정)", "냉장고(예정)"]
+    
+    private var curItem : String?
     
     var curKind = "" {
         didSet {
@@ -31,6 +33,7 @@ class ItemSelectViewController : UIViewController {
             self.collectionView?.reloadData()
         }
     }
+    
     
     
     var willSearchItem : String = ""
@@ -57,6 +60,24 @@ class ItemSelectViewController : UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tfItemSearch.text = willSearchItem
     }
+    
+    @IBAction func doneClicked(_ sender: Any) {
+        if (curItem != nil) {
+            let alert = UIAlertController(title: nil, message: "선택하신 폐기물이 \(curItem)이(가) 맞나요?", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .default) { UIAlertAction in
+                self.performSegue(withIdentifier: "showLastView", sender: self)
+            }
+            let cancel = UIAlertAction(title: "취소", style: .default, handler: nil)
+            alert.addAction(ok)
+            alert.addAction(cancel)
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            let alert = UIAlertController(title: "오류", message: "품목이 선택되지 않았습니다.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     
     @IBAction func furnitureClicked(_ sender: Any) {
         curKind = "가구"
@@ -99,6 +120,8 @@ class ItemSelectViewController : UIViewController {
             btnETC?.tintColor = .purple
         }
     }
+    
+    
     
     
 }
@@ -150,14 +173,19 @@ extension ItemSelectViewController: UICollectionViewDelegate, UICollectionViewDa
         switch(curKind) {
         case "가구" :
             print(String( self.furniture[indexPath.item] ) + " 클릭됨")
+            curItem = self.furniture[indexPath.item]
         case "주방용품" :
             print(String( self.kitchen[indexPath.item] ) + " 클릭됨")
+            curItem = self.kitchen[indexPath.item]
         case "생활용품" :
             print(String( life[indexPath.item] ) + " 클릭됨")
+            curItem = self.life[indexPath.item]
         case "냉난방용품" :
             print(String( air[indexPath.item] ) + " 클릭됨")
+            curItem = self.air[indexPath.item]
         case "기타제품" :
             print(String( etc[indexPath.item] ) + " 클릭됨")
+            curItem = self.etc[indexPath.item]
         default:
             print("curKind -> defalut")
         }
