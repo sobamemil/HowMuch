@@ -63,9 +63,10 @@ class ItemSelectViewController : UIViewController {
     
     @IBAction func doneClicked(_ sender: Any) {
         if (curItem != nil) {
-            let alert = UIAlertController(title: nil, message: "선택하신 폐기물이 \(curItem)이(가) 맞나요?", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil, message: "선택하신 폐기물이 \(curItem!)이(가) 맞나요?", preferredStyle: .alert)
             let ok = UIAlertAction(title: "확인", style: .default) { UIAlertAction in
                 self.performSegue(withIdentifier: "showLastView", sender: self)
+                
             }
             let cancel = UIAlertAction(title: "취소", style: .default, handler: nil)
             alert.addAction(ok)
