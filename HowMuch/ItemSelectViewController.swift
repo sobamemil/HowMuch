@@ -62,16 +62,22 @@ class ItemSelectViewController : UIViewController {
     }
     
     @IBAction func doneClicked(_ sender: Any) {
+        
         if (curItem != nil) {
-            let alert = UIAlertController(title: nil, message: "선택하신 폐기물이 \(curItem!)이(가) 맞나요?", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .default) { UIAlertAction in
-                self.performSegue(withIdentifier: "showLastView", sender: self)
-                
+            if( (curItem!.hasSuffix("(예정)")) != true ) {
+                let alert = UIAlertController(title: nil, message: "선택하신 폐기물이 \(curItem!)이(가) 맞나요?", preferredStyle: .alert)
+                let ok = UIAlertAction(title: "확인", style: .default) { UIAlertAction in
+                    self.performSegue(withIdentifier: "showLastView", sender: self)
+                    
+                }
+                let cancel = UIAlertAction(title: "취소", style: .default, handler: nil)
+                alert.addAction(ok)
+                alert.addAction(cancel)
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: nil, message: "아직 지원하지 않는 품목입니다.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             }
-            let cancel = UIAlertAction(title: "취소", style: .default, handler: nil)
-            alert.addAction(ok)
-            alert.addAction(cancel)
-            self.present(alert, animated: true, completion: nil)
         } else {
             let alert = UIAlertController(title: "오류", message: "품목이 선택되지 않았습니다.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
