@@ -77,6 +77,7 @@ class ItemSelectViewController : UIViewController {
             } else {
                 let alert = UIAlertController(title: nil, message: "아직 지원하지 않는 품목입니다.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
             }
         } else {
             let alert = UIAlertController(title: "오류", message: "품목이 선택되지 않았습니다.", preferredStyle: .alert)
