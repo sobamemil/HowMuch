@@ -150,7 +150,7 @@ extension ItemSelectViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CSCollectionViewCell
         
-        cell.backgroundColor = .systemGray6
+        cellBackColorReset(cell)
         
         switch(curKind) {
         case "가구" :
@@ -169,27 +169,35 @@ extension ItemSelectViewController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        var cell = collectionView.cellForItem(at: indexPath)
+        
+//        cell?.contentView.backgroundColor = .purple
+        if indexPath.item == 0 {
+            cell?.isSelected = true
+            collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .init())
+          }
         
         switch(curKind) {
         case "가구" :
-            print(String( self.furniture[indexPath.item] ) + " 클릭됨")
             curItem = self.furniture[indexPath.item]
         case "주방용품" :
-            print(String( self.kitchen[indexPath.item] ) + " 클릭됨")
             curItem = self.kitchen[indexPath.item]
         case "생활용품" :
-            print(String( life[indexPath.item] ) + " 클릭됨")
             curItem = self.life[indexPath.item]
         case "냉난방용품" :
-            print(String( air[indexPath.item] ) + " 클릭됨")
             curItem = self.air[indexPath.item]
         case "기타제품" :
-            print(String( etc[indexPath.item] ) + " 클릭됨")
             curItem = self.etc[indexPath.item]
         default:
             print("curKind -> defalut")
         }
+    }
+    
+    func cellBackColorReset(_ cell : UICollectionViewCell) {
+        cell.backgroundColor = .systemGray6
     }
 }
 
@@ -223,4 +231,14 @@ extension ItemSelectViewController: UICollectionViewDelegateFlowLayout {
 class CSCollectionViewCell : UICollectionViewCell {
     
     @IBOutlet var lbl: UILabel!
+    
+    override var isSelected: Bool {
+      didSet {
+        if isSelected {
+            backgroundColor = .systemPurple
+        } else {
+            backgroundColor = .systemGray6
+        }
+      }
+    }
 }

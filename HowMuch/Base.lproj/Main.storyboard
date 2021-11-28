@@ -878,10 +878,10 @@
             </objects>
             <point key="canvasLocation" x="1950.7246376811595" y="1711.6071428571429"/>
         </scene>
-        <!--View Controller-->
+        <!--Last View Controller-->
         <scene sceneID="5Zs-iz-dUK">
             <objects>
-                <viewController id="JPh-ZH-mLn" sceneMemberID="viewController">
+                <viewController id="JPh-ZH-mLn" customClass="LastViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DJH-f9-r8j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
