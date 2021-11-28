@@ -17,5 +17,6 @@ class LastViewController : UIViewController {
         super.viewDidLoad()
         
         curItem.text = selectedItem
+        
     }
 }

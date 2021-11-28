@@ -65,7 +65,7 @@ class ItemSelectViewController : UIViewController {
         
         if (curItem != nil) {
             if( (curItem!.hasSuffix("(예정)")) != true ) {
-                let alert = UIAlertController(title: nil, message: "선택하신 폐기물이 \(curItem!)이(가) 맞나요?", preferredStyle: .alert)
+                let alert = UIAlertController(title: nil, message: "선택하신 폐기물이 \(curItem!) 가(이) 맞나요?", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "확인", style: .default) { UIAlertAction in
                     self.performSegue(withIdentifier: "showLastView", sender: self)
                     
@@ -76,7 +76,7 @@ class ItemSelectViewController : UIViewController {
                 self.present(alert, animated: true, completion: nil)
             } else {
                 let alert = UIAlertController(title: nil, message: "아직 지원하지 않는 품목입니다.", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
                 self.present(alert, animated: true)
             }
         } else {
