@@ -968,6 +968,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZjG-sl-EbM"/>
+                    <connections>
+                        <outlet property="curItem" destination="pPX-nX-uNp" id="qrZ-YE-Xs9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vY1-fN-rqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

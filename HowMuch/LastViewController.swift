@@ -8,9 +8,14 @@
 import UIKit
 
 class LastViewController : UIViewController {
+    
+    @IBOutlet weak var curItem: UILabel!
+    
+    var selectedItem : String? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        curItem.text = selectedItem
     }
 }

@@ -122,7 +122,20 @@ class ItemSelectViewController : UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
+        guard let nextViewController : LastViewController = segue.destination as? LastViewController else {
+            print("3")
+            return
+        }
+        
+        guard let sender = sender as? ItemSelectViewController else {
+            print("4")
+            return
+        }
+
+        nextViewController.selectedItem = sender.curItem
+    }
     
     
 }
@@ -235,7 +248,7 @@ class CSCollectionViewCell : UICollectionViewCell {
     override var isSelected: Bool {
       didSet {
         if isSelected {
-            backgroundColor = .systemPurple
+            backgroundColor = .systemIndigo
         } else {
             backgroundColor = .systemGray6
         }
