@@ -14,7 +14,7 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     @IBOutlet weak var btnSend: UIButton!
     
     // defalut -> 의자
-    private var returnedItem = "의자"
+    private var returnedItem = ""
     
     var imagePicker : UIImagePickerController!
 //    let imageServerURL = "https://ptsv2.com/t/6ezif-1634703985/post"
@@ -55,11 +55,11 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     @IBAction func imageSendClicked(_ sender: Any) {
         print("imageSendClicked")
         
-//        //이미지 업로드 메소드
-//        uploadPhoto(msg: "test1", imgV1.image!, url: imageServerURL)
+        //이미지 업로드 메소드
+        uploadPhoto(msg: "test1", imgV1.image!, url: imageServerURL)
 
-        // for test
-        self.performSegue(withIdentifier: "showItemSelect2", sender: self)
+//        // for test
+//        self.performSegue(withIdentifier: "showItemSelect2", sender: self)
 
     }
     
@@ -92,6 +92,7 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
                   ,headers: headers).responseString(completionHandler: {
             response in
             print(response)
+            self.returnedItem = response.value ?? ""
 
 //            // 길이 측정 화면으로 이동
 //            self.performSegue(withIdentifier: "showCameraMeasure", sender: self)

@@ -50,7 +50,7 @@
 /* Begin PBXFileReference section */
 		570A144427533484008A0B43 /* LastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
 		5710FA6B273A452900308ADF /* ItemSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectViewController.swift; sourceTree = "<group>"; };
-		575626CF2717E87400EF6428 /* HowMuch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HowMuch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		575626CF2717E87400EF6428 /* 얼마면 돼.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "얼마면 돼.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		575626D22717E87400EF6428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		575626D42717E87400EF6428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		575626D62717E87400EF6428 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 		575626D02717E87400EF6428 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				575626CF2717E87400EF6428 /* HowMuch.app */,
+				575626CF2717E87400EF6428 /* 얼마면 돼.app */,
 				575626E82717E87800EF6428 /* HowMuchTests.xctest */,
 				575626F22717E87800EF6428 /* HowMuchUITests.xctest */,
 			);
@@ -173,9 +173,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		575626CE2717E87400EF6428 /* HowMuch */ = {
+		575626CE2717E87400EF6428 /* 얼마면 돼 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 575626FC2717E87900EF6428 /* Build configuration list for PBXNativeTarget "HowMuch" */;
+			buildConfigurationList = 575626FC2717E87900EF6428 /* Build configuration list for PBXNativeTarget "얼마면 돼" */;
 			buildPhases = (
 				575626CB2717E87400EF6428 /* Sources */,
 				575626CC2717E87400EF6428 /* Frameworks */,
@@ -185,12 +185,12 @@
 			);
 			dependencies = (
 			);
-			name = HowMuch;
+			name = "얼마면 돼";
 			packageProductDependencies = (
 				57E74A4A271DBAF1000566D4 /* Alamofire */,
 			);
 			productName = HowMuch;
-			productReference = 575626CF2717E87400EF6428 /* HowMuch.app */;
+			productReference = 575626CF2717E87400EF6428 /* 얼마면 돼.app */;
 			productType = "com.apple.product-type.application";
 		};
 		575626E72717E87800EF6428 /* HowMuchTests */ = {
@@ -268,7 +268,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				575626CE2717E87400EF6428 /* HowMuch */,
+				575626CE2717E87400EF6428 /* 얼마면 돼 */,
 				575626E72717E87800EF6428 /* HowMuchTests */,
 				575626F12717E87800EF6428 /* HowMuchUITests */,
 			);
@@ -346,12 +346,12 @@
 /* Begin PBXTargetDependency section */
 		575626EA2717E87800EF6428 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 575626CE2717E87400EF6428 /* HowMuch */;
+			target = 575626CE2717E87400EF6428 /* 얼마면 돼 */;
 			targetProxy = 575626E92717E87800EF6428 /* PBXContainerItemProxy */;
 		};
 		575626F42717E87800EF6428 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 575626CE2717E87400EF6428 /* HowMuch */;
+			target = 575626CE2717E87400EF6428 /* 얼마면 돼 */;
 			targetProxy = 575626F32717E87800EF6428 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -502,6 +502,7 @@
 				DEVELOPMENT_TEAM = AK73969HFN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HowMuch/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permisions for taking photos and vidios";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -531,6 +532,7 @@
 				DEVELOPMENT_TEAM = AK73969HFN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HowMuch/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Camera permisions for taking photos and vidios";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -658,7 +660,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		575626FC2717E87900EF6428 /* Build configuration list for PBXNativeTarget "HowMuch" */ = {
+		575626FC2717E87900EF6428 /* Build configuration list for PBXNativeTarget "얼마면 돼" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				575626FD2717E87900EF6428 /* Debug */,

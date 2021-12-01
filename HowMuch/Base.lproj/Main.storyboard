@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,7 @@
         <!--회원가입-->
         <scene sceneID="dxJ-Zi-tWO">
             <objects>
-                <viewController id="lXp-UD-XIK" customClass="signupViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lXp-UD-XIK" customClass="signupViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YoU-XT-kj8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,7 +249,7 @@
         <!--Main View Controller-->
         <scene sceneID="ijk-HB-eiF">
             <objects>
-                <viewController id="kEz-gS-6hh" customClass="MainViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kEz-gS-6hh" customClass="MainViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3f0-VO-At3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -500,7 +500,7 @@
         <!--Image Recognize View Controller-->
         <scene sceneID="CD5-EK-AbE">
             <objects>
-                <viewController id="n8n-qI-emS" customClass="ImageRecognizeViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="n8n-qI-emS" customClass="ImageRecognizeViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ctf-Pe-dl7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -554,7 +554,7 @@
         <!--View Controller-->
         <scene sceneID="Iln-k6-vm9">
             <objects>
-                <viewController id="kKk-0J-EIi" customClass="ARViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kKk-0J-EIi" customClass="ARViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oki-an-2fL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,7 +603,7 @@
         <!--Email Login View Controller-->
         <scene sceneID="8HC-nW-rck">
             <objects>
-                <viewController id="YjY-EF-ESJ" customClass="EmailLoginViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YjY-EF-ESJ" customClass="EmailLoginViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M1i-HF-mer">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -677,7 +677,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XA3-9O-4bp" customClass="CheckBox" customModule="HowMuch" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XA3-9O-4bp" customClass="CheckBox" customModule="얼마면_돼" customModuleProvider="target">
                                 <rect key="frame" x="20" y="548" width="100" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -747,7 +747,7 @@
         <!--Item Select View Controller-->
         <scene sceneID="38T-jF-dg0">
             <objects>
-                <viewController id="Vur-dc-sMa" customClass="ItemSelectViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vur-dc-sMa" customClass="ItemSelectViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zuw-RD-DED">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -821,7 +821,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="5iw-fJ-K6S" customClass="CSCollectionViewCell" customModule="HowMuch" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="5iw-fJ-K6S" customClass="CSCollectionViewCell" customModule="얼마면_돼" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bYA-WO-gaU">
@@ -881,7 +881,7 @@
         <!--Last View Controller-->
         <scene sceneID="5Zs-iz-dUK">
             <objects>
-                <viewController id="JPh-ZH-mLn" customClass="LastViewController" customModule="HowMuch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JPh-ZH-mLn" customClass="LastViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DJH-f9-r8j">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1057,7 +1057,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vzl-2F-htB"/>
+        <segue reference="ExG-9f-h2j"/>
         <segue reference="MPd-cD-0Wn"/>
         <segue reference="om8-Ly-NKV"/>
     </inferredMetricsTieBreakers>
