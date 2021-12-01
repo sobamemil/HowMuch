@@ -21,6 +21,7 @@
 		575626F92717E87900EF6428 /* HowMuchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */; };
 		576C7BF7272F9F9A0022ECCB /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C7BF6272F9F9A0022ECCB /* ARViewController.swift */; };
 		576C7BF9272FB69C0022ECCB /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C7BF8272FB69C0022ECCB /* Plane.swift */; };
+		5777D8822757391D00202ED6 /* SwiftSMTP in Frameworks */ = {isa = PBXBuildFile; productRef = 5777D8812757391D00202ED6 /* SwiftSMTP */; };
 		57B4A3C1271FE14700A62731 /* signupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B4A3C0271FE14700A62731 /* signupViewController.swift */; };
 		57D0399227324E6900C3B3BA /* ImageRecognizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0399127324E6900C3B3BA /* ImageRecognizeViewController.swift */; };
 		57E74A43271D745F000566D4 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A42271D745F000566D4 /* EmailLoginViewController.swift */; };
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5777D8822757391D00202ED6 /* SwiftSMTP in Frameworks */,
 				57E74A4B271DBAF1000566D4 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +190,7 @@
 			name = "얼마면 돼";
 			packageProductDependencies = (
 				57E74A4A271DBAF1000566D4 /* Alamofire */,
+				5777D8812757391D00202ED6 /* SwiftSMTP */,
 			);
 			productName = HowMuch;
 			productReference = 575626CF2717E87400EF6428 /* 얼마면 돼.app */;
@@ -263,6 +266,7 @@
 			mainGroup = 575626C62717E87400EF6428;
 			packageReferences = (
 				57E74A49271DBAF1000566D4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5777D8802757391D00202ED6 /* XCRemoteSwiftPackageReference "Swift-SMTP" */,
 			);
 			productRefGroup = 575626D02717E87400EF6428 /* Products */;
 			projectDirPath = "";
@@ -690,6 +694,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5777D8802757391D00202ED6 /* XCRemoteSwiftPackageReference "Swift-SMTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/Swift-SMTP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		57E74A49271DBAF1000566D4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -701,6 +713,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5777D8812757391D00202ED6 /* SwiftSMTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5777D8802757391D00202ED6 /* XCRemoteSwiftPackageReference "Swift-SMTP" */;
+			productName = SwiftSMTP;
+		};
 		57E74A4A271DBAF1000566D4 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 57E74A49271DBAF1000566D4 /* XCRemoteSwiftPackageReference "Alamofire" */;
