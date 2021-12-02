@@ -20,6 +20,8 @@ class ARViewController : UIViewController, ARSCNViewDelegate {
     
     var dotNodes = [SCNNode]()
     var textNode = SCNNode()
+    
+    var length : String = ""
 
     func addDot( at hitResult: ARHitTestResult ) {
         // the size of the green circle
@@ -66,6 +68,11 @@ class ARViewController : UIViewController, ARSCNViewDelegate {
 
         // convert to cm
         distance *= 100
+        
+        let str = String(format: "%2d", abs(distance))
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 0
+        self.length = formatter.string(from: NSNumber(value: distance))!
 
         let distanceFormatted = String(format: "%.2f cm", abs(distance))
         updateText(text: distanceFormatted, atPosition: end.position)
@@ -73,7 +80,7 @@ class ARViewController : UIViewController, ARSCNViewDelegate {
 
     func updateText( text: String, atPosition: SCNVector3 ) {
          textNode.removeFromParentNode()
-        print(text)
+                
          let textGeometry = SCNText(string: text, extrusionDepth: 1.0)
          textGeometry.firstMaterial?.diffuse.contents = UIColor.systemRed
 
@@ -106,7 +113,10 @@ class ARViewController : UIViewController, ARSCNViewDelegate {
         
         // setup scene
         self.setupScene()
+        
+        
     }
+    
 //
 //    // start node
 //        var startNode: SCNNode?
@@ -116,10 +126,12 @@ class ARViewController : UIViewController, ARSCNViewDelegate {
             if dotNodes.count >= 2 { resetDots() }
             
             let hitTestResults = sceneView.hitTest(view.center, types: .featurePoint)
+            
              if let hitResult = hitTestResults.first {
                  addDot(at: hitResult)
              }
         }
+    
     
     //        @IBAction func onAddButtonClick(_ sender: UIButton) {
     //

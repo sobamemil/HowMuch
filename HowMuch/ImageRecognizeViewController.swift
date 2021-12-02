@@ -42,7 +42,7 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     @objc func takePhoto(_ sender: UITapGestureRecognizer? = nil) {
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         
         present(imagePicker, animated: true, completion: nil)
     }
@@ -83,7 +83,7 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
             
             // 사진 전송
             if let imageData = photo.jpegData(compressionQuality: 1) {
-                multipart.append(imageData, withName: "file", fileName: "\(imageData).jpg", mimeType: "image/jpg")
+                multipart.append(imageData, withName: "file", fileName: "\(String(imageData.description.filter { !" \n\t\r".contains($0) })).jpg", mimeType: "image/jpg")
                 //이미지 데이터를 POST할 데이터에 덧붙임
                 print("이미지 추가 성공")
             }
@@ -91,8 +91,12 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
         ,method: .post        //전달 방식
                   ,headers: headers).responseString(completionHandler: {
             response in
-            print(response)
-            self.returnedItem = response.value ?? ""
+                
+            print(response.value ?? "")
+            let itemArray = (response.value ?? "").split(separator: " ")
+//            print(itemArray)
+            
+            self.returnedItem = itemArray.first?.description ?? ""
 
 //            // 길이 측정 화면으로 이동
 //            self.performSegue(withIdentifier: "showCameraMeasure", sender: self)

@@ -77,12 +77,10 @@ class MainViewController : UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
         guard let nextViewController : ItemSelectViewController = segue.destination as? ItemSelectViewController else {
-            print("1")
             return
         }
         
         guard let sender = sender as? MainViewController else {
-            print("2")
             return
         }
 
