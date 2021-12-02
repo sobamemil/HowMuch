@@ -48,17 +48,23 @@ class ItemSelectViewController : UIViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: nil, action: nil)
         
-        self.navigationItem.title = "품목선택"
-        
-        if(tfItemSearch.text == "") {
-            
-        }
+        self.navigationItem.title = "품목 선택"
 
         btnColorSet(curKind)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tfItemSearch.text = willSearchItem
+        
+        if(willSearchItem != "") {
+            for (index, item) in self.furniture.enumerated() {
+                if(item == willSearchItem) {
+                    curItem = self.furniture[index]
+                    curKind = "가구"
+                }
+            }
+            self.doneClicked(self)
+        }
     }
     
     @IBAction func doneClicked(_ sender: Any) {
@@ -66,11 +72,11 @@ class ItemSelectViewController : UIViewController {
         if (curItem != nil) {
             if( (curItem!.hasSuffix("(예정)")) != true ) {
                 let alert = UIAlertController(title: nil, message: "선택하신 폐기물이 \(curItem!) 가(이) 맞나요?", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "확인", style: .default) { UIAlertAction in
+                let ok = UIAlertAction(title: "네", style: .default) { UIAlertAction in
                     self.performSegue(withIdentifier: "showLastView", sender: self)
                     
                 }
-                let cancel = UIAlertAction(title: "취소", style: .default, handler: nil)
+                let cancel = UIAlertAction(title: "아니요", style: .default, handler: nil)
                 alert.addAction(ok)
                 alert.addAction(cancel)
                 self.present(alert, animated: true, completion: nil)

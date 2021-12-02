@@ -53,9 +53,7 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
         imgV1.image = info[.originalImage] as? UIImage
     }
     
-    @IBAction func imageSendClicked(_ sender: Any) {
-        print("imageSendClicked")
-        
+    @IBAction func imageSendClicked(_ sender: Any) {        
         //이미지 업로드 메소드
         uploadPhoto(msg: "test1", imgV1.image!, url: imageServerURL)
 
@@ -86,7 +84,6 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
             if let imageData = photo.jpegData(compressionQuality: 1) {
                 multipart.append(imageData, withName: "file", fileName: "\(String(imageData.description.filter { !" \n\t\r".contains($0) })).jpg", mimeType: "image/jpg")
                 //이미지 데이터를 POST할 데이터에 덧붙임
-                print("이미지 추가 성공")
             }
         }, to: url    //전달할 url
         ,method: .post        //전달 방식

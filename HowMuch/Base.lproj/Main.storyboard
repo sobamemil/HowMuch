@@ -111,7 +111,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AGM-1s-w2W">
-                                <rect key="frame" x="110" y="831" width="195" height="31"/>
+                                <rect key="frame" x="20" y="831" width="374" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="메인 화면 바로 진입 (테스트용)"/>
@@ -1092,8 +1092,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ExG-9f-h2j"/>
-        <segue reference="WY9-7O-BCO"/>
-        <segue reference="7EO-7a-Bdc"/>
+        <segue reference="EBI-9Z-tTo"/>
+        <segue reference="om8-Ly-NKV"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
