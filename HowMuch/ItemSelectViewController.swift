@@ -55,7 +55,7 @@ class ItemSelectViewController : UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tfItemSearch.text = willSearchItem
-        
+         
         if(willSearchItem != "") {
             for (index, item) in self.furniture.enumerated() {
                 if(item == willSearchItem) {

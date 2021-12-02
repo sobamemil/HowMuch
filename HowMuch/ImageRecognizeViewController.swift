@@ -24,6 +24,21 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     
 //    let imageServerURL = "http://9637-121-158-10-61.ngrok.io/image"
     
+    lazy var activityIndicator: UIActivityIndicatorView = {
+            // Create an indicator.
+            let activityIndicator = UIActivityIndicatorView()
+            activityIndicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+            activityIndicator.center = self.view.center
+            activityIndicator.color = UIColor.red
+        
+            // Also show the indicator even when the animation is stopped.
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.style = UIActivityIndicatorView.Style.medium
+        
+            // Start animation.
+            activityIndicator.stopAnimating()
+            return activityIndicator }()
+    
     // 플라스크 서버 ip주소
     let imageServerURL = "http://121.158.10.61:5000/image"
     
@@ -37,6 +52,9 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(takePhoto(_:)))
         imgV1.addGestureRecognizer(tapGesture)
         imgV1.isUserInteractionEnabled = true
+        
+        self.view.addSubview(self.activityIndicator)
+
     }
     
     @objc func takePhoto(_ sender: UITapGestureRecognizer? = nil) {
@@ -63,6 +81,10 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     }
     
     func uploadPhoto(msg: String, _ photo : UIImage, url: String){
+        
+        self.activityIndicator.startAnimating()
+
+        
         //함수 매개변수는 POST할 데이터, url
         
         let headers: HTTPHeaders = [
@@ -85,10 +107,7 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
                 multipart.append(imageData, withName: "file", fileName: "\(String(imageData.description.filter { !" \n\t\r".contains($0) })).jpg", mimeType: "image/jpg")
                 //이미지 데이터를 POST할 데이터에 덧붙임
             }
-        }, to: url    //전달할 url
-        ,method: .post        //전달 방식
-                  ,headers: headers).responseJSON(completionHandler: {
-            response in
+        }, to: url, method: .post, headers: headers).responseJSON(completionHandler: { response in
                 
             switch response.result {
             case .success:
@@ -117,6 +136,8 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
 //            // 길이 측정 화면으로 이동
 //            self.performSegue(withIdentifier: "showCameraMeasure", sender: self)
 
+            self.activityIndicator.stopAnimating()
+            
             // 받은 품목을 다음 viewController로 넘겨주고
             // 품목 선택 화면으로 이동
             
@@ -155,4 +176,6 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
 
         nextViewController.willSearchItem = sender.returnedItem
     }
+    
+    
 }
