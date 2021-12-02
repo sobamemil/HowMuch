@@ -30,7 +30,7 @@ class MainViewController : UIViewController {
         // 내비게이션 백버튼 숨김
         navigationItem.hidesBackButton = true
 
-        self.navigationItem.title = "강원도 원주시"
+        self.navigationItem.title = "얼마면 돼"
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.done, target: nil, action: nil)
     }
@@ -87,4 +87,9 @@ class MainViewController : UIViewController {
         nextViewController.curKind = sender.curType
     }
     
+    
+    // unwind segue 사용하기 위한 메소드
+    @IBAction func unwindMainVC(_ segue: UIStoryboardSegue) {
+        
+    }
 }

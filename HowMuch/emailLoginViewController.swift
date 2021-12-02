@@ -139,9 +139,10 @@ class EmailLoginViewController : UIViewController {
                 case .success:
                     if(response.value == "true") {
                         print("로그인 성공")
-
+                        
+                        UserDefaults.standard.setValue(id, forKey: "id")
+                        
                         if (self.cbAutoLogin.isChecked) {
-                            UserDefaults.standard.setValue(id, forKey: "id")
                             UserDefaults.standard.setValue(pwd, forKey: "pwd")
                             print("자동로그인 계정 정보 저장")
                         }

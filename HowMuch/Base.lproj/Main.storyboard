@@ -245,7 +245,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qW0-xI-7RK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="BKw-Ae-LOL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1137.68115942029" y="116.51785714285714"/>
+            <point key="canvasLocation" x="851" y="117"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="ijk-HB-eiF">
@@ -455,17 +455,6 @@
                                     <action selector="airClicked:" destination="kEz-gS-6hh" eventType="touchUpInside" id="79T-kG-5nJ"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cOc-Gu-Fbb">
-                                <rect key="frame" x="0.0" y="88" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <imageReference key="image" image="trash.square.fill" catalog="system" renderingMode="hierarchical">
-                                    <hierarchicalColors>
-                                        <color systemColor="labelColor"/>
-                                        <color systemColor="secondaryLabelColor"/>
-                                        <color systemColor="tertiaryLabelColor"/>
-                                    </hierarchicalColors>
-                                </imageReference>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이거 버릴래, 얼마면 돼?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfC-Oh-I8u">
                                 <rect key="frame" x="20" y="370" width="186" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -473,6 +462,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cOc-Gu-Fbb">
+                                <rect key="frame" x="0.0" y="102" width="414" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <imageReference key="image" image="howmuch_icon" renderingMode="hierarchical">
+                                    <hierarchicalColors>
+                                        <color systemColor="labelColor"/>
+                                        <color systemColor="secondaryLabelColor"/>
+                                        <color systemColor="tertiaryLabelColor"/>
+                                    </hierarchicalColors>
+                                </imageReference>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Ca-1r-oTb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -496,7 +496,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cuu-rc-DCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ugS-KK-bcS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1137.68115942029" y="926.78571428571422"/>
+            <point key="canvasLocation" x="852" y="792"/>
         </scene>
         <!--Image Recognize View Controller-->
         <scene sceneID="CD5-EK-AbE">
@@ -549,7 +549,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Scr-mw-EaS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="927"/>
+            <point key="canvasLocation" x="1536" y="792"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Iln-k6-vm9">
@@ -612,7 +612,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cL-jz-lZO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Z13-Qp-Ij1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3492.753623188406" y="1711.6071428571429"/>
+            <point key="canvasLocation" x="2188" y="1456"/>
         </scene>
         <!--Email Login View Controller-->
         <scene sceneID="8HC-nW-rck">
@@ -756,9 +756,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccB-ne-Rxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="927"/>
+            <point key="canvasLocation" x="138" y="792"/>
         </scene>
-        <!--Item Select View Controller-->
+        <!--품목 선택-->
         <scene sceneID="38T-jF-dg0">
             <objects>
                 <viewController id="Vur-dc-sMa" customClass="ItemSelectViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
@@ -876,7 +876,7 @@
                         <viewLayoutGuide key="safeArea" id="78l-4u-OfO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YOt-s6-wY2"/>
+                    <navigationItem key="navigationItem" title="품목 선택" id="YOt-s6-wY2"/>
                     <connections>
                         <outlet property="btnAir" destination="BIJ-zD-XqU" id="c5f-ic-oNt"/>
                         <outlet property="btnETC" destination="eOl-cO-REX" id="s2I-83-Iwf"/>
@@ -890,9 +890,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bpi-SX-jJ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950.7246376811595" y="1711.6071428571429"/>
+            <point key="canvasLocation" x="851" y="1456"/>
         </scene>
-        <!--Last View Controller-->
+        <!--신청서 작성-->
         <scene sceneID="5Zs-iz-dUK">
             <objects>
                 <viewController id="JPh-ZH-mLn" customClass="LastViewController" customModule="얼마면_돼" customModuleProvider="target" sceneMemberID="viewController">
@@ -977,25 +977,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="신청하기"/>
+                                <connections>
+                                    <action selector="submitClicked:" destination="JPh-ZH-mLn" eventType="touchUpInside" id="IMT-XG-vEd"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="신청인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn6-rM-kcj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="신청인" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn6-rM-kcj">
                                 <rect key="frame" x="20" y="561" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkr-vW-7ro">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkr-vW-7ro">
                                 <rect key="frame" x="20" y="590" width="59" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전화번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-mZ-wOW">
-                                <rect key="frame" x="94" y="590" width="205" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1051,20 +1047,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="전화번호" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-mZ-wOW">
+                                <rect key="frame" x="180" y="590" width="205" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="72u-p5-Bww"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZjG-sl-EbM"/>
+                    <navigationItem key="navigationItem" title="신청서 작성" id="ZjG-sl-EbM"/>
                     <connections>
+                        <outlet property="address" destination="mld-yj-8IA" id="eGf-9r-QBA"/>
                         <outlet property="curItem" destination="pPX-nX-uNp" id="qrZ-YE-Xs9"/>
+                        <outlet property="lblCost" destination="v7Z-HG-6bq" id="imK-wN-VuU"/>
+                        <outlet property="name" destination="mkr-vW-7ro" id="riD-fM-TMY"/>
+                        <outlet property="phoneNumber" destination="4cB-mZ-wOW" id="JwH-nB-1kY"/>
                         <outlet property="tfLength" destination="Sfl-OS-upu" id="x0j-s5-acV"/>
                         <segue destination="kKk-0J-EIi" kind="show" identifier="showLengthMeasure" id="Pcr-uu-DeV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vY1-fN-rqt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2744.9275362318845" y="1711.6071428571429"/>
+            <point key="canvasLocation" x="1535" y="1456"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Q4s-Ye-nhw">
@@ -1084,7 +1091,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vzl-2F-htB"/>
+        <segue reference="ExG-9f-h2j"/>
         <segue reference="WY9-7O-BCO"/>
         <segue reference="7EO-7a-Bdc"/>
     </inferredMetricsTieBreakers>
@@ -1097,12 +1104,12 @@
         <image name="cup.and.saucer.fill" catalog="system" width="128" height="91"/>
         <image name="desktopcomputer" catalog="system" width="128" height="101"/>
         <image name="focus_square" width="145" height="149"/>
+        <image name="howmuch_icon" width="1024" height="1024"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.and.arrow.up.fill" catalog="system" width="115" height="128"/>
         <image name="studentdesk" catalog="system" width="124" height="128"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
-        <image name="trash.square.fill" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

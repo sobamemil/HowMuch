@@ -19,6 +19,7 @@
 		575626ED2717E87800EF6428 /* HowMuchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626EC2717E87800EF6428 /* HowMuchTests.swift */; };
 		575626F72717E87900EF6428 /* HowMuchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F62717E87900EF6428 /* HowMuchUITests.swift */; };
 		575626F92717E87900EF6428 /* HowMuchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */; };
+		575B14492758AEC80047FB96 /* SMTP_SET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575B14482758AEC80047FB96 /* SMTP_SET.swift */; };
 		576C7BF7272F9F9A0022ECCB /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C7BF6272F9F9A0022ECCB /* ARViewController.swift */; };
 		576C7BF9272FB69C0022ECCB /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576C7BF8272FB69C0022ECCB /* Plane.swift */; };
 		5777D8822757391D00202ED6 /* SwiftSMTP in Frameworks */ = {isa = PBXBuildFile; productRef = 5777D8812757391D00202ED6 /* SwiftSMTP */; };
@@ -65,6 +66,7 @@
 		575626F22717E87800EF6428 /* HowMuchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HowMuchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		575626F62717E87900EF6428 /* HowMuchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMuchUITests.swift; sourceTree = "<group>"; };
 		575626F82717E87900EF6428 /* HowMuchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowMuchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		575B14482758AEC80047FB96 /* SMTP_SET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMTP_SET.swift; sourceTree = "<group>"; };
 		576C7BF6272F9F9A0022ECCB /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		576C7BF8272FB69C0022ECCB /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		57B4A3C0271FE14700A62731 /* signupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signupViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				575626D62717E87400EF6428 /* FirstViewController.swift */,
 				57E74A42271D745F000566D4 /* EmailLoginViewController.swift */,
 				57E74A4C271DC5F4000566D4 /* MainViewController.swift */,
+				575B14482758AEC80047FB96 /* SMTP_SET.swift */,
 				576C7BF6272F9F9A0022ECCB /* ARViewController.swift */,
 				576C7BF8272FB69C0022ECCB /* Plane.swift */,
 				575626D82717E87400EF6428 /* Main.storyboard */,
@@ -316,6 +319,7 @@
 				575626D32717E87400EF6428 /* AppDelegate.swift in Sources */,
 				57E74A48271D9806000566D4 /* underlineTextField.swift in Sources */,
 				57E74A43271D745F000566D4 /* EmailLoginViewController.swift in Sources */,
+				575B14492758AEC80047FB96 /* SMTP_SET.swift in Sources */,
 				57B4A3C1271FE14700A62731 /* signupViewController.swift in Sources */,
 				57D0399227324E6900C3B3BA /* ImageRecognizeViewController.swift in Sources */,
 				575626D52717E87400EF6428 /* SceneDelegate.swift in Sources */,

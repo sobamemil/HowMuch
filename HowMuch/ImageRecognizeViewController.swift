@@ -42,7 +42,8 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
     @objc func takePhoto(_ sender: UITapGestureRecognizer? = nil) {
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
+        
         
         present(imagePicker, animated: true, completion: nil)
     }
@@ -89,15 +90,33 @@ class ImageRecognizeViewController : UIViewController, UIImagePickerControllerDe
             }
         }, to: url    //전달할 url
         ,method: .post        //전달 방식
-                  ,headers: headers).responseString(completionHandler: {
+                  ,headers: headers).responseJSON(completionHandler: {
             response in
                 
-            print(response.value ?? "")
-            let itemArray = (response.value ?? "").split(separator: " ")
-//            print(itemArray)
-            
-            self.returnedItem = itemArray.first?.description ?? ""
+            switch response.result {
+            case .success:
+//                self.lblCost.text = response.value ?? "없음"
+//                print(response.value!)
+                
+                guard let data = response.data else { return }
+                
+                // data
+                    if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
+                        
+                        if let name = json["name"] as? String {
+                            self.returnedItem = name
+                            print("품목 인식 결과 : \(name)")
+                        }
+                    }
+                
+            case .failure(let error):
+                let alert = UIAlertController(title: "Request Error", message: "관리자에게 문의하세요.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "확인", style: .destructive))
+                self.present(alert, animated: true, completion: nil)
 
+                print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
+            }
+            
 //            // 길이 측정 화면으로 이동
 //            self.performSegue(withIdentifier: "showCameraMeasure", sender: self)
 
