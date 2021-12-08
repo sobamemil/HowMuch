@@ -42,7 +42,7 @@ class LastViewController : UIViewController {
         super.viewDidLoad()
         
         curItem.text = selectedItem
-        
+         
         // DateFormatter 클래스 상수 선언
         let formatter = DateFormatter()
         
@@ -138,7 +138,6 @@ class LastViewController : UIViewController {
     
     
     @IBAction func submitClicked(_ sender: Any) {
-        self.activityIndicator.startAnimating()
 
         let mail_from = Mail.User(name: "test_from", email: "sieh96@gmail.com")
         let mail_to = Mail.User(name: "test_to", email: "sieh96@naver.com")
@@ -148,9 +147,7 @@ class LastViewController : UIViewController {
         
         smtp.send(mail) { _ in
             print("send")
-            self.activityIndicator.stopAnimating()
         }
-        
         
         let alert = UIAlertController(title: "신청완료", message: "신청이 완료되었습니다.\n폐기물 처리 업체에서 별도의 연락이 갈 수도 있습니다. 감사합니다.", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))

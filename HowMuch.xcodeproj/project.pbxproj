@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		570A144527533484008A0B43 /* LastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A144427533484008A0B43 /* LastViewController.swift */; };
 		5710FA6C273A452900308ADF /* ItemSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5710FA6B273A452900308ADF /* ItemSelectViewController.swift */; };
+		57509ADF2760A9DF00F4B1B2 /* SMTP_SET.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57509ADE2760A9DF00F4B1B2 /* SMTP_SET.swift */; };
 		575626D32717E87400EF6428 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626D22717E87400EF6428 /* AppDelegate.swift */; };
 		575626D52717E87400EF6428 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626D42717E87400EF6428 /* SceneDelegate.swift */; };
 		575626D72717E87400EF6428 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575626D62717E87400EF6428 /* FirstViewController.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		570A144427533484008A0B43 /* LastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastViewController.swift; sourceTree = "<group>"; };
 		5710FA6B273A452900308ADF /* ItemSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectViewController.swift; sourceTree = "<group>"; };
+		57509ADE2760A9DF00F4B1B2 /* SMTP_SET.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMTP_SET.swift; sourceTree = "<group>"; };
 		575626CF2717E87400EF6428 /* 얼마면 돼.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "얼마면 돼.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		575626D22717E87400EF6428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		575626D42717E87400EF6428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				57E74A42271D745F000566D4 /* EmailLoginViewController.swift */,
 				57E74A4C271DC5F4000566D4 /* MainViewController.swift */,
 				575B14482758AEC80047FB96 /* SMTP_SET.swift */,
+				57509ADE2760A9DF00F4B1B2 /* SMTP_SET.swift */,
 				576C7BF6272F9F9A0022ECCB /* ARViewController.swift */,
 				576C7BF8272FB69C0022ECCB /* Plane.swift */,
 				575626D82717E87400EF6428 /* Main.storyboard */,
@@ -322,6 +325,7 @@
 				575B14492758AEC80047FB96 /* SMTP_SET.swift in Sources */,
 				57B4A3C1271FE14700A62731 /* signupViewController.swift in Sources */,
 				57D0399227324E6900C3B3BA /* ImageRecognizeViewController.swift in Sources */,
+				57509ADF2760A9DF00F4B1B2 /* SMTP_SET.swift in Sources */,
 				575626D52717E87400EF6428 /* SceneDelegate.swift in Sources */,
 				570A144527533484008A0B43 /* LastViewController.swift in Sources */,
 				57E74A46271D7838000566D4 /* checkBox.swift in Sources */,
