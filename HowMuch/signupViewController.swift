@@ -41,7 +41,7 @@ class signupViewController : UIViewController {
             request.timeoutInterval = 10
             
             // POST 로 보낼 정보
-        let params = ["id":id, "name":name, "pw":pw, "phonenumber":pnum] as Dictionary
+        let params = ["userid":id, "username":name, "pw":pw, "phonenumber":pnum] as Dictionary
         
 //          parameter : id, pw, name, addres, email, phonenumber
         

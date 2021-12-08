@@ -83,9 +83,14 @@ class LastViewController : UIViewController {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.timeoutInterval = 10
+        
+        let ad = UIApplication.shared.delegate as? AppDelegate
+        request.headers = ["Authorization" : (ad?.token)!]
+        
+        
 
         // POST 로 보낼 정보
-        let params = ["name" : curItem.text!, "width" : Double(tfLength.text!)!, "id" : "test@test.com"] as Dictionary
+        let params = ["name" : curItem.text!, "width" : Double(tfLength.text!)!] as Dictionary
         
         //  signup parameter : id, pw, name, addres, email, phonenumber
 
@@ -96,6 +101,7 @@ class LastViewController : UIViewController {
             print("http Body Error")
         }
         
+    
         AF.request(request).responseJSON { (response) in
             // self.activityIndicator.stopAnimating()
 
@@ -112,7 +118,7 @@ class LastViewController : UIViewController {
                 // data
                     if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
                         
-                        if let userName = json["Username"] as? String {
+                        if let userName = json["username"] as? String {
                             self.name.text = userName
                         }
                         

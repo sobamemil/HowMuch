@@ -25,7 +25,7 @@
 		5777D8822757391D00202ED6 /* SwiftSMTP in Frameworks */ = {isa = PBXBuildFile; productRef = 5777D8812757391D00202ED6 /* SwiftSMTP */; };
 		57B4A3C1271FE14700A62731 /* signupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B4A3C0271FE14700A62731 /* signupViewController.swift */; };
 		57D0399227324E6900C3B3BA /* ImageRecognizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D0399127324E6900C3B3BA /* ImageRecognizeViewController.swift */; };
-		57E74A43271D745F000566D4 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A42271D745F000566D4 /* EmailLoginViewController.swift */; };
+		57E74A43271D745F000566D4 /* emailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A42271D745F000566D4 /* emailLoginViewController.swift */; };
 		57E74A46271D7838000566D4 /* checkBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A45271D7838000566D4 /* checkBox.swift */; };
 		57E74A48271D9806000566D4 /* underlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E74A47271D9806000566D4 /* underlineTextField.swift */; };
 		57E74A4B271DBAF1000566D4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 57E74A4A271DBAF1000566D4 /* Alamofire */; };
@@ -71,7 +71,7 @@
 		576C7BF8272FB69C0022ECCB /* Plane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		57B4A3C0271FE14700A62731 /* signupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signupViewController.swift; sourceTree = "<group>"; };
 		57D0399127324E6900C3B3BA /* ImageRecognizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognizeViewController.swift; sourceTree = "<group>"; };
-		57E74A42271D745F000566D4 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
+		57E74A42271D745F000566D4 /* emailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailLoginViewController.swift; sourceTree = "<group>"; };
 		57E74A45271D7838000566D4 /* checkBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkBox.swift; sourceTree = "<group>"; };
 		57E74A47271D9806000566D4 /* underlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = underlineTextField.swift; sourceTree = "<group>"; };
 		57E74A4C271DC5F4000566D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 				575626D22717E87400EF6428 /* AppDelegate.swift */,
 				575626D42717E87400EF6428 /* SceneDelegate.swift */,
 				575626D62717E87400EF6428 /* FirstViewController.swift */,
-				57E74A42271D745F000566D4 /* EmailLoginViewController.swift */,
+				57E74A42271D745F000566D4 /* emailLoginViewController.swift */,
 				57E74A4C271DC5F4000566D4 /* MainViewController.swift */,
 				576C7BF6272F9F9A0022ECCB /* ARViewController.swift */,
 				57509AE02760AA1300F4B1B2 /* SMTP_SET.swift */,
@@ -318,7 +318,7 @@
 				575626D72717E87400EF6428 /* FirstViewController.swift in Sources */,
 				575626D32717E87400EF6428 /* AppDelegate.swift in Sources */,
 				57E74A48271D9806000566D4 /* underlineTextField.swift in Sources */,
-				57E74A43271D745F000566D4 /* EmailLoginViewController.swift in Sources */,
+				57E74A43271D745F000566D4 /* emailLoginViewController.swift in Sources */,
 				57509AE12760AA1300F4B1B2 /* SMTP_SET.swift in Sources */,
 				57B4A3C1271FE14700A62731 /* signupViewController.swift in Sources */,
 				57D0399227324E6900C3B3BA /* ImageRecognizeViewController.swift in Sources */,
