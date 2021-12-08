@@ -1,5 +1,5 @@
 //
-//  EmailLoginViewController.swift
+//  emailLoginViewController.swift
 //  HowMuch
 //
 //  Created by 심찬영 on 2021/10/18.
@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import SwiftUI
 
-class EmailLoginViewController : UIViewController {
+class emailLoginViewController : UIViewController {
     
     var userModel = UserModel() // 사용자 계정 인스턴스 생성
 
@@ -111,14 +111,14 @@ class EmailLoginViewController : UIViewController {
             // 터치 이벤트 막기
             self.view.isUserInteractionEnabled = false
 
-            let url = "http://49.161.233.189:8080/user/login"
+            let url = "http://49.161.233.189:8080/login"
             var request = URLRequest(url: URL(string: url)!)
             request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.timeoutInterval = 10
 
             // POST 로 보낼 정보
-            let params = ["id":id, "pw":pwd] as Dictionary
+            let params = ["userid":id, "pw":pwd] as Dictionary
 
             //  signup parameter : id, pw, name, addres, email, phonenumber
 
@@ -128,40 +128,59 @@ class EmailLoginViewController : UIViewController {
             } catch {
                 print("http Body Error")
             }
-
-            AF.request(request).responseString { (response) in
+            
+            AF.request(request).responseJSON { (response) in
+                // self.activityIndicator.stopAnimating()
                 self.activityIndicator.stopAnimating()
 
                 // 터치 이벤트 풀기
                 self.view.isUserInteractionEnabled = true
-
+                
                 switch response.result {
                 case .success:
-                    if(response.value == "true") {
-                        print("로그인 성공")
-                        
-                        UserDefaults.standard.setValue(id, forKey: "id")
-                        
-                        if (self.cbAutoLogin.isChecked) {
-                            UserDefaults.standard.setValue(pwd, forKey: "pwd")
-                            print("자동로그인 계정 정보 저장")
-                        }
+    //                self.lblCost.text = response.value ?? "없음"
+    //                print(response.value!)
+                    
+                    guard let data = response.data else { return }
+                    
+                    // data
+                        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] {
+                            if let status = json["status"] as? String {
+                                if (status == "true") {
+                                    if let token = json["authorization"] as? String {
+                                        UserDefaults.standard.setValue(id, forKey: "id")
+                                        
+                                        var ad = UIApplication.shared.delegate as? AppDelegate
+                                        ad?.token = token
+                                        
+                                        print(ad?.token)
+                                            
+                                        if (self.cbAutoLogin.isChecked) {
+                                            UserDefaults.standard.setValue(pwd, forKey: "pwd")
+                                            print("자동로그인 계정 정보 저장")
+                                        }
 
-                        if let removable = self.view.viewWithTag(102) {
-                            removable.removeFromSuperview()
-                        }
-                        self.performSegue(withIdentifier: "showMain", sender: self)
-                    } else {
-                        print("로그인 실패")
-                        self.shakeTextField(textField: self.tfEmail)
-                        self.shakeTextField(textField: self.tfPwd)
-                        let loginFailLabel = UILabel(frame: CGRect(x: 68, y: 510, width: 279, height: 45))
-                        loginFailLabel.text = "아이디나 비밀번호가 다릅니다."
-                        loginFailLabel.textColor = UIColor.red
-                        loginFailLabel.tag = 102
+                                        if let removable = self.view.viewWithTag(102) {
+                                            removable.removeFromSuperview()
+                                        }
+                                        
+                                        print("로그인 성공")
+                                        self.performSegue(withIdentifier: "showMain", sender: self)
+                                    }
+                                } else {
+                                    print("로그인 실패")
+                                    self.shakeTextField(textField: self.tfEmail)
+                                    self.shakeTextField(textField: self.tfPwd)
+                                    let loginFailLabel = UILabel(frame: CGRect(x: 68, y: 510, width: 279, height: 45))
+                                    loginFailLabel.text = "아이디나 비밀번호가 다릅니다."
+                                    loginFailLabel.textColor = UIColor.red
+                                    loginFailLabel.tag = 102
 
-                        self.view.addSubview(loginFailLabel)
-                    }
+                                    self.view.addSubview(loginFailLabel)
+                                }
+                            }
+                        }
+                    
                 case .failure(let error):
                     let alert = UIAlertController(title: "Request Error", message: "관리자에게 문의하세요.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "확인", style: .destructive))
@@ -170,6 +189,49 @@ class EmailLoginViewController : UIViewController {
                     print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
                 }
             }
+            
+
+//            AF.request(request).responseString { (response) in
+//                self.activityIndicator.stopAnimating()
+//
+//                // 터치 이벤트 풀기
+//                self.view.isUserInteractionEnabled = true
+//
+//                switch response.result {
+//                case .success:
+//                    if(response.value == "true") {
+//                        print("로그인 성공")
+//
+//                        UserDefaults.standard.setValue(id, forKey: "id")
+//
+//                        if (self.cbAutoLogin.isChecked) {
+//                            UserDefaults.standard.setValue(pwd, forKey: "pwd")
+//                            print("자동로그인 계정 정보 저장")
+//                        }
+//
+//                        if let removable = self.view.viewWithTag(102) {
+//                            removable.removeFromSuperview()
+//                        }
+//                        self.performSegue(withIdentifier: "showMain", sender: self)
+//                    } else {
+//                        print("로그인 실패")
+//                        self.shakeTextField(textField: self.tfEmail)
+//                        self.shakeTextField(textField: self.tfPwd)
+//                        let loginFailLabel = UILabel(frame: CGRect(x: 68, y: 510, width: 279, height: 45))
+//                        loginFailLabel.text = "아이디나 비밀번호가 다릅니다."
+//                        loginFailLabel.textColor = UIColor.red
+//                        loginFailLabel.tag = 102
+//
+//                        self.view.addSubview(loginFailLabel)
+//                    }
+//                case .failure(let error):
+//                    let alert = UIAlertController(title: "Request Error", message: "관리자에게 문의하세요.", preferredStyle: .alert)
+//                    alert.addAction(UIAlertAction(title: "확인", style: .destructive))
+//                    self.present(alert, animated: true, completion: nil)
+//
+//                    print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
+//                }
+//            }
         }
     }
     
